@@ -113,19 +113,119 @@ or open individual `.mp4` files under [`assets/demos/`](assets/demos/):
 | 7 | Multi-turn Understanding |
 | 8 | Real-time Web Search + Compose |
 
-## CMA-Harness
+## CMA-Harness — Tool-Augmented Deployment
 
-The **harness** deploys the same cognitive structure to open-ended real-world
-workflows:
+CMA-Harness is not a replacement for the core agent; it *wraps* the same
+**PAE → EVM → CoRE → MEC** structure and extends it for open-ended, multi-session
+workflows. The division of labor is preserved: **PAE** still compresses images into
+cards, **EVM** stores long-horizon visual memory, **CoRE** retrieves relevant
+episodes, and **MEC** remains the executive controller — only its action space is
+broadened from *understand / generate / edit* to a structured registry of callable
+tools.
 
-- **Persistent multimodal memory** — session memories, user preferences, thumbnails,
-  image cards, and gallery assets remain addressable across turns.
-- **Tool-augmented action space** — web search, image retrieval, generation,
-  editing, composition, deterministic collage, and inspection tools expand MEC's
-  decisions.
-- **Interactive execution loop** — tool results are appended back into the dialogue
-  state, enabling iterative search, retrieval, generation, editing, and final
-  response synthesis.
+### 🛠 MEC-Driven Tool Registry (17 tools)
+
+The harness exposes an OpenAI-style function-calling interface over a registry of
+**17 tools**, each described by a JSON schema, capability blurb,
+concurrency-safety flag, and async executor. Tools fall into three groups:
+
+| Group | Tools |
+| :--- | :--- |
+| **Generation & editing** | text-to-image generation, image editing, multi-image composition, deterministic PIL collage, background removal, watermark removal, cropping, text overlay |
+| **Understanding & memory** | image inspection, best-image selection, image retrieval |
+| **External information** | web search, batch search, web-image search, web-page fetch, image fetch |
+
+Access is governed by an **MEC action policy**, not exposed as an undifferentiated
+toolbox:
+
+- MEC first decides *whether* a tool is needed at all — many requests are best
+  answered directly.
+- For real-world entities (logos, products, screenshots, named faces), MEC is
+  instructed **not** to hallucinate from text: it must first obtain real pixels
+  via memory retrieval or web-image fetch, then route the task to
+  composition / editing with those image identifiers as visual references.
+- **Semantic composition vs. deterministic layout** — diffusion composition fuses
+  references into a new scene; a PIL-based collage tool is used when faces, logos,
+  captions, dates, or CJK text must be preserved *pixel-faithfully* (posters,
+  infographics, timelines, comparison sheets).
+- **Concurrency policy** — read-only ops (web search, web fetch, image inspect,
+  memory retrieval) run in parallel; mutating / GPU-heavy ops (generation,
+  editing, composition, cropping, text render) are serialized for memory
+  consistency.
+- **Safety rails** — duplicate-call detection prompts MEC to revise its plan;
+  a per-turn tool-round budget forces a graceful partial summary when exhausted.
+
+### 🧠 Flexible Persistent Multimodal Memory
+
+EVM is extended from a session-local bank into a **multi-scope persistent memory
+system** organized by lifecycle:
+
+| Scope | What it holds |
+| :--- | :--- |
+| **Session memory** | the current interaction transcript and its visual state |
+| **User memory** | durable preferences, feedback, project facts, external references (typed Markdown + auto-refreshed index) |
+| **Gallery memory** | reusable visual assets promoted from earlier sessions |
+| **Compact summaries** | structured recaps of older turns once a session exceeds token / tool-call thresholds |
+
+**Three-part visual asset.** Every image is stored as
+`{ original · thumbnail · image_card(JSON) }`:
+
+- **original** — preserved for future edit, composition, inspection, download
+- **thumbnail** — compact preview used for retrieval and UI
+- **image card** — semantic tags, short description, color palette, aspect ratio,
+  file paths, plus **lifecycle metadata**: parent-child links for edited variants,
+  an `is_current` flag for the active deliverable, user feedback marks, and a
+  gallery-promotion flag
+
+**Adaptive retrieval** — MEC does not always call CoRE:
+
+1. Deterministic rules resolve obvious references (`"the latest image"`,
+   `"the first image"`, explicit indices).
+2. A lightweight text prefilter narrows candidates by tag / description / palette /
+   recency / feedback.
+3. Multimodal retrieval over image cards + thumbnails disambiguates fuzzy
+   references (`"the blue one"`, `"the busier layout"`).
+4. Full-resolution pixels are loaded *only* after a downstream tool needs them.
+
+**Asynchronous annotation** — new images (uploaded, generated, edited, fetched,
+composed) are persisted immediately and returned to the user right away; a
+background PAE-style extractor then enriches the image card with tags, description,
+and palette — so latency-sensitive interaction is never blocked by visual
+abstraction.
+
+**Long-conversation compaction** — instead of replaying an unbounded transcript,
+older turns are folded into structured summaries that preserve high-level goals,
+established preferences, generated image identifiers, open follow-ups, and current
+active state, while the most recent turns stay verbatim.
+
+### 🔁 Interactive Execution Loop
+
+Each user turn is a small event loop driven by MEC:
+
+```
+reconstruct memory context  →  rebuild system prompt (memory + tool schemas)
+        ↓
+MEC reasons over the task
+        ↓
+[ optional tool call(s), read-only in parallel / mutating serialized ]
+        ↓
+tool results appended to transcript  →  MEC observes and decides next step
+        ↓
+iterate until enough evidence  →  final image / text response
+```
+
+Intermediate reasoning, tool steps, tool results, and progressive images are
+surfaced to the UI as they arrive. Uploaded and produced images are stored as
+addressable memory assets, the current deliverable is tracked, so follow-ups like
+*"make it brighter"* or *"use the previous poster"* resolve without re-attaching
+every historical image.
+
+**Reference instantiation.** The current deployment uses **Qwen3.5-122B-A10B** as
+the MEC planner, **Qwen-Image-2512** for text-to-image, and **Qwen-Image-Edit-2511**
+for editing / multi-image composition. Generation and editing prompts are
+auto-expanded (richer visual descriptions for generation; locality + object
+grounding + unrelated-region preservation for editing). These are instantiation
+choices — the harness architecture does not depend on any specific model.
 
 ## Citation
 
