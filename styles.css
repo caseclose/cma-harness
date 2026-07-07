@@ -99,6 +99,11 @@ body[data-theme="dark"] {
 html {
   scroll-behavior: smooth;
   zoom: 0.8;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 @media (max-width: 860px) {
