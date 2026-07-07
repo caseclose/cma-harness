@@ -285,6 +285,7 @@ p {
 
 .author-link {
   color: inherit;
+  cursor: pointer;
   transition: color 0.2s ease;
 }
 .author-link:hover {
