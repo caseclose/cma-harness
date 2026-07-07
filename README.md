@@ -127,24 +127,6 @@ workflows:
   state, enabling iterative search, retrieval, generation, editing, and final
   response synthesis.
 
-## Contents
-
-- `index.html` — landing page (hero, demo gallery, method, benchmark, results, deployment, BibTeX)
-- `styles.css` — theming (light / dark) and responsive layout
-- `assets/`
-  - `pipeline.png`, `data-pipeline.png`, `showcase.png`, `qualitative-case.png`,
-    `case-preview.png` — paper figures
-  - `demos/demo-{1..8}.mp4` + `demo-{1..8}.jpg` — 8 demo videos with fancy posters
-  - `demos/_make_posters.py` — regenerate poster frames from source videos
-- `.nojekyll` — disable Jekyll so files under `_...` are served as-is
-
-## Publish on GitHub Pages
-
-1. Push this repo to `https://github.com/caseclose/cma-harness`.
-2. Repo → **Settings → Pages**.
-3. **Source**: *Deploy from a branch* · **Branch**: `main` · **Folder**: `/ (root)`.
-4. First deploy takes ~30 s; visit `https://caseclose.github.io/cma-harness/`.
-
 ## Citation
 
 ```bibtex
