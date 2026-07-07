@@ -393,15 +393,21 @@ p {
 .bench-stat {
   padding: 22px 24px;
   border-radius: calc(var(--radius) - 6px);
-  background: var(--metric-bg);
-  border: 1px solid var(--metric-border);
-  color: var(--section-band-text);
-  backdrop-filter: blur(6px);
+  background: #ffffff;
+  border: 1px solid rgba(23, 32, 51, 0.08);
+  box-shadow: 0 12px 32px -22px rgba(23, 32, 51, 0.35);
+  color: #172033;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+[data-theme="dark"] .bench-stat {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f8fafc;
+  box-shadow: none;
 }
 .bench-stat:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px -22px rgba(51, 103, 214, 0.4);
+  box-shadow: 0 20px 42px -22px rgba(51, 103, 214, 0.45);
 }
 .bench-stat strong {
   display: block;
@@ -416,11 +422,14 @@ p {
 }
 .bench-stat span {
   display: block;
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 14px;
-  font-weight: 500;
-  color: var(--section-band-text);
-  opacity: 0.78;
+  font-weight: 560;
+  letter-spacing: 0.01em;
+  color: #4a5468;
+}
+[data-theme="dark"] .bench-stat span {
+  color: rgba(226, 232, 240, 0.82);
 }
 
 .bench-grid { margin-top: 30px; }
