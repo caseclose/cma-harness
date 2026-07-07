@@ -283,6 +283,14 @@ p {
   font-weight: 520;
 }
 
+.author-link {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+.author-link:hover {
+  color: var(--accent);
+}
+
 .authors sup,
 .affiliations sup {
   color: var(--accent);
