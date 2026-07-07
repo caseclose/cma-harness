@@ -1071,57 +1071,167 @@ footer p {
 
 @media (max-width: 860px) {
   .site-header {
-    position: static;
-    align-items: flex-start;
-    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
   }
 
+  .brand { font-size: 14px; }
+  .brand img { width: 32px; height: 32px; border-radius: 10px; }
+
   .header-actions {
-    align-items: flex-start;
-    flex-direction: column;
+    gap: 8px;
   }
 
   nav {
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    max-width: min(56vw, 340px);
+    padding-bottom: 2px;
+    justify-content: flex-end;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    padding: 8px 12px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 
+  .theme-toggle {
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+  .theme-toggle .theme-label { display: none; }
+  .theme-toggle { gap: 0; }
+
+  main { width: min(100% - 24px, 1440px); }
+
   .hero {
-    padding-top: 52px;
+    padding: 56px 0 32px;
+  }
+  .hero h1 { font-size: clamp(38px, 10vw, 56px); }
+  .hero h2 { font-size: clamp(22px, 6vw, 32px); }
+  .hero-copy { font-size: 16px; margin-top: 22px; }
+  .authors { font-size: 15px; margin-top: 18px; }
+  .affiliations, .author-note { font-size: 12px; }
+
+  .actions { gap: 8px; margin-top: 22px; }
+  .button { min-height: 40px; padding: 0 14px; font-size: 13px; }
+
+  .section { padding: 48px 0; }
+  .section-title h2 { font-size: clamp(26px, 6.5vw, 36px); }
+  .section-lede { font-size: 15px; }
+
+  .dark {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 0;
   }
 
   .grid.two,
-  .grid.three,
-  .highlights,
-  .metrics {
+  .grid.three {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
+  .card, .link-card { padding: 20px; }
 
-  .showcase-image-link {
-    padding: 12px;
+  .highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 12px 0 40px;
   }
+  .highlight-card { padding: 16px; border-radius: 20px; }
+  .highlight-card strong { font-size: clamp(26px, 7vw, 36px); }
+  .highlight-card span { font-size: 12.5px; }
+
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .metrics div {
+    min-height: 0;
+    padding: 18px 16px;
+    border-radius: 20px;
+  }
+  .metrics strong { font-size: clamp(28px, 8vw, 40px); margin-bottom: 8px; }
+  .metrics span { font-size: 13px; }
+
+  .bench-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 20px 0 24px;
+  }
+  .bench-stat { padding: 16px 14px; border-radius: 18px; }
+  .bench-stat strong { font-size: clamp(26px, 7vw, 34px); }
+  .bench-stat span { font-size: 12.5px; margin-top: 8px; }
+
+  .bench-results {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .bench-result { padding: 20px 22px; border-radius: 22px; }
+  .bench-result strong { font-size: clamp(32px, 9vw, 44px); }
+  .bench-result span { font-size: 13px; margin-top: 8px; }
+
+  .bench-list { font-size: 13.5px; padding-left: 16px; }
+
+  .figure-card { padding: 12px; margin-top: 20px; }
+  .figure-card img { border-radius: 14px; }
+  figcaption { font-size: 13px; margin-top: 10px; }
+
+  .showcase-image-link { padding: 10px; }
+  .panel-head { padding: 14px 16px; }
+  .panel-head span { font-size: 14px; }
+  .panel-head a { font-size: 12.5px; }
 
   .video-caption {
     align-items: flex-start;
     flex-direction: column;
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+
+  .stack-viewer { gap: 6px; }
+  .stack-stage { max-width: 100%; }
+  .stack-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  .stack-meta {
+    margin-top: 22px;
+    gap: 12px;
+  }
+  .stack-caption { font-size: 14px; }
+  .stack-dot { width: 28px; height: 28px; font-size: 12px; }
+
+  footer {
+    width: min(100% - 24px, 1440px);
+    padding: 26px 0 40px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 560px) {
-  main,
-  footer {
-    width: min(100% - 24px, 1440px);
-  }
+  main, footer { width: min(100% - 20px, 1440px); }
 
-  .hero-copy {
-    font-size: 17px;
-  }
+  .site-header { padding: 10px 14px; }
 
-  .actions {
-    align-items: stretch;
-    flex-direction: column;
-  }
+  .hero { padding: 40px 0 24px; }
+  .hero h1 { font-size: clamp(34px, 11vw, 46px); letter-spacing: -0.04em; }
+  .hero h2 { font-size: clamp(20px, 6vw, 26px); }
 
-  .button {
-    width: 100%;
-  }
+  .actions { flex-direction: column; align-items: stretch; }
+  .button { width: 100%; }
+
+  .highlights { grid-template-columns: 1fr; }
+  .bench-stats { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: 1fr; }
+
+  .stack-controls { padding: 4px 10px 6px; }
+  .ctrl-btn { width: 24px; height: 24px; }
+  .ctrl-btn svg { width: 12px; height: 12px; }
 }
