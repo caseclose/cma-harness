@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cognitive-structured Multimodal Agent</title>
+  <meta name="description" content="Project page for Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <a class="brand" href="#">
+      <img src="assets/logo.png" alt="CMA-Harness logo">
+      <span>CMA-Harness</span>
+    </a>
+    <div class="header-actions">
+      <nav>
+        <a href="#demo-gallery">Demo</a>
+        <a href="#method">Method</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#results">Results</a>
+        <a href="#harness">CMA-Harness</a>
+        <a href="#bibtex">BibTeX</a>
+      </nav>
+      <!-- Pipeline lives inside #method now; kept the nav lean. -->
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+        <span class="theme-label">Dark</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Long-horizon multimodal memory, retrieval, generation, and editing</p>
+      <h1>Cognitive-structured Multimodal Agent</h1>
+      <h2>for Multimodal Understanding, Generation, and Editing</h2>
+      <p class="authors">
+        Feng Wang<sup>1,*</sup>, Canmiao Fu<sup>2</sup>, Zhipeng Huang<sup>2</sup>,
+        Chen Li<sup>2</sup>, Jing LYU<sup>2</sup>, Ge Li<sup>1</sup>
+      </p>
+      <p class="affiliations">
+        <sup>1</sup>Peking University &nbsp;&nbsp; <sup>2</sup>WeChat Vision, Tencent Inc.
+      </p>
+      <p class="author-note"><sup>*</sup>Work done during an internship at WeChat Vision, Tencent Inc.</p>
+
+      <div class="actions" aria-label="Project links">
+        <a class="button primary" href="assets/paper.pdf">Paper</a>
+        <a class="button" href="#demo-gallery">Demo</a>
+        <a class="button" href="#method">Method</a>
+        <a class="button" href="#benchmark">Benchmark</a>
+        <a class="button" href="#results">Results</a>
+        <a class="button" href="https://github.com/caseclose/cma-harness">Code</a>
+        <a class="button" href="#bibtex">BibTeX</a>
+        <span class="button muted">Dataset coming soon</span>
+      </div>
+
+      <p class="hero-copy">
+        We introduce a memory-centric multimodal agent that externalizes visual history into
+        Episodic Visual Memory, selectively retrieves relevant visual episodes, and plans
+        understanding, generation, editing, and composition actions through a multimodal executive controller.
+      </p>
+    </section>
+
+    <section class="section" id="demo-gallery">
+      <div class="section-title">
+        <p class="eyebrow">Demo gallery</p>
+      </div>
+      <div class="stack-viewer">
+        <button class="stack-nav prev" type="button" aria-label="Previous demo">&lsaquo;</button>
+        <div class="stack-stage" id="demo-stack" aria-live="polite">
+          <div class="stack-controls" id="stack-controls">
+            <button class="ctrl-btn ctrl-play" type="button" aria-label="Play or pause"></button>
+            <span class="ctrl-time ctrl-current">0:00</span>
+            <input type="range" class="ctrl-seek" min="0" max="1000" step="1" value="0" aria-label="Seek">
+            <span class="ctrl-time ctrl-duration">0:00</span>
+            <button class="ctrl-btn ctrl-mute" type="button" aria-label="Toggle sound"></button>
+            <button class="ctrl-btn ctrl-fs" type="button" aria-label="Fullscreen"></button>
+          </div>
+        </div>
+        <button class="stack-nav next" type="button" aria-label="Next demo">&rsaquo;</button>
+      </div>
+      <div class="stack-meta">
+        <span class="stack-caption" id="stack-caption">Bedroom Refresh Planner</span>
+        <div class="stack-dots" id="stack-dots"></div>
+      </div>
+    </section>
+
+    <section class="highlights" aria-label="Key results">
+      <div class="highlight-card">
+        <strong>91.4%</strong>
+        <span>English retrieval accuracy over 20-turn sessions</span>
+      </div>
+      <div class="highlight-card">
+        <strong>82.0%</strong>
+        <span>Hard subset retrieval accuracy</span>
+      </div>
+      <div class="highlight-card">
+        <strong>12.7s</strong>
+        <span>Runtime per turn, nearly half of the 32B all-context baseline</span>
+      </div>
+      <div class="highlight-card">
+        <strong>8.53</strong>
+        <span>Chinese overall Gemini generation quality score</span>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="section-title">
+        <p class="eyebrow">Method</p>
+        <h2>A cognitive structure for long-horizon multimodal interaction</h2>
+        <p class="section-lede">
+          Our agent externalizes visual history into an addressable memory, retrieves only
+          the episodes relevant to the current turn, and lets a multimodal controller decide
+          whether to understand, generate, edit, or compose. The pipeline below shows how
+          these components fit together end&#8209;to&#8209;end.
+        </p>
+      </div>
+      <figure class="figure-card method-figure">
+        <img src="assets/pipeline.png" alt="Pipeline of the Cognitive-structured Multimodal Agent.">
+        <figcaption>End-to-end pipeline: episodic visual memory, cognitive retrieval engine, and multimodal executive controller.</figcaption>
+      </figure>
+      <div class="grid two method-grid">
+        <div class="card">
+          <h3>Structured visual memory</h3>
+          <p>
+            Incoming and generated images are compressed into captions, tags, thumbnails,
+            and metadata, allowing visual evidence to persist without repeatedly occupying
+            the model context window.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Selective cross-turn retrieval</h3>
+          <p>
+            The Cognitive Retrieval Engine selects only the visual episodes relevant to the
+            current user turn, improving grounding while reducing visual-token overhead.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Executive task control</h3>
+          <p>
+            The Multimodal Executive Controller infers whether a turn requires understanding,
+            generation, editing, composition, or pure chat, then routes the task accordingly.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Training for memory use</h3>
+          <p>
+            A Unified Scenario Engine generates structured multi-turn dialogues with
+            retrieval annotations, enabling SFT and RL optimization for memory construction
+            and retrieval.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="benchmark">
+      <div class="section-title">
+        <p class="eyebrow">Benchmark</p>
+        <h2>M2CA-Bench evaluates cross-turn visual recall</h2>
+      </div>
+      <figure class="figure-card compact">
+        <img src="assets/data-pipeline.png" alt="Data pipeline for structured multi-turn scenario generation.">
+        <figcaption>Unified Scenario Engine for constructing long-horizon multimodal dialogues.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" id="results">
+      <div class="section-title">
+        <p class="eyebrow">Visual results</p>
+        <h2>Long-horizon dialogue examples with generation, editing, and visual recall</h2>
+      </div>
+      <div class="panel visual-panel">
+        <div class="panel-head">
+          <span>Showcase</span>
+          <a href="assets/dialogue-showcase.pdf">Open full figure</a>
+        </div>
+        <a class="showcase-image-link" href="assets/dialogue-showcase.pdf">
+          <img class="showcase-image" src="assets/showcase.png" alt="Long-horizon multimodal dialogue showcase.">
+        </a>
+      </div>
+      <div class="panel visual-panel result-figure">
+        <div class="panel-head">
+          <span>Qualitative Comparison</span>
+          <a href="assets/qualitative-case.pdf">Open full figure</a>
+        </div>
+        <a class="showcase-image-link" href="assets/qualitative-case.pdf">
+          <img class="showcase-image" src="assets/qualitative-case.png" alt="Qualitative comparison of long-horizon multimodal dialogue results.">
+        </a>
+      </div>
+      <div class="panel visual-panel result-figure">
+        <div class="panel-head">
+          <span>Additional Dialogue Example</span>
+          <a href="assets/case-preview.pdf">Open full figure</a>
+        </div>
+        <a class="showcase-image-link" href="assets/case-preview.pdf">
+          <img class="showcase-image" src="assets/case-preview.png" alt="Additional dialogue example for multimodal generation, editing, and visual recall.">
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="harness">
+      <div class="section-title">
+        <p class="eyebrow">Deployment</p>
+        <h2>CMA-Harness extends the same cognitive structure to open-ended workflows</h2>
+      </div>
+      <div class="grid three">
+        <div class="card">
+          <h3>Persistent multimodal memory</h3>
+          <p>Session memories, user preferences, thumbnails, image cards, and gallery assets remain addressable across turns.</p>
+        </div>
+        <div class="card">
+          <h3>Tool-augmented action space</h3>
+          <p>Web search, image retrieval, generation, editing, composition, deterministic collage, and inspection tools expand MEC's decisions.</p>
+        </div>
+        <div class="card">
+          <h3>Interactive execution loop</h3>
+          <p>Tool results are appended back into the dialogue state, enabling iterative search, retrieval, generation, editing, and final response synthesis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bibtex">
+      <div class="section-title">
+        <p class="eyebrow">Citation</p>
+        <h2>BibTeX</h2>
+      </div>
+      <pre><code>@article{wang2026cognitive,
+  title   = {Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing},
+  author  = {Wang, Feng and Fu, Canmiao and Huang, Zhipeng and Li, Chen and LYU, Jing and Li, Ge},
+  journal = {arXiv preprint},
+  year    = {2026}
+}</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Cognitive-structured Multimodal Agent. Static project page for public release.</p>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.theme-toggle');
+    const label = document.querySelector('.theme-label');
+    const root = document.body;
+    const savedTheme = localStorage.getItem('cma-theme');
+    const setTheme = (theme) => {
+      root.dataset.theme = theme;
+      const isDark = theme === 'dark';
+      toggle.setAttribute('aria-pressed', String(isDark));
+      toggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+      label.textContent = isDark ? 'Light' : 'Dark';
+    };
+    setTheme(savedTheme === 'dark' ? 'dark' : 'light');
+    toggle.addEventListener('click', () => {
+      const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('cma-theme', nextTheme);
+      setTheme(nextTheme);
+    });
+
+    // -------- Demo gallery stacked-card viewer --------
+    const demoTitles = [
+      'Bedroom Refresh Planner',
+      'Bedroom Makeover Poster',
+      'Weeknight Recipe Card',
+      'Pet Birthday Composer',
+      'Pet Birthday Poster',
+      'Second-Hand Listing Studio',
+      'AI Stock Watchlist Brief',
+      'Brand Logo Fusion'
+    ];
+    const demos = demoTitles.map((t, i) => ({
+      src: `assets/demos/demo-${i + 1}.mp4`,
+      poster: `assets/demos/demo-${i + 1}.jpg`,
+      title: t
+    }));
+
+    const stage = document.getElementById('demo-stack');
+    const dotsWrap = document.getElementById('stack-dots');
+    const caption = document.getElementById('stack-caption');
+    const prevBtn = document.querySelector('.stack-nav.prev');
+    const nextBtn = document.querySelector('.stack-nav.next');
+
+    let current = 0;
+    let playTimer = null;
+    const POSTER_HOLD_MS = 3000;
+
+    const ICON_PLAY = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
+    const ICON_PAUSE = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+    const ICON_MUTE = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>';
+    const ICON_UNMUTE = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M16.5 12a4.5 4.5 0 0 0-2.5-4v2.2l2.4 2.4c.06-.2.1-.4.1-.6zM19 12a7 7 0 0 0-1-3.6l1.5-1.5A9 9 0 0 1 21 12a9 9 0 0 1-1.6 5.1l-1.5-1.5A7 7 0 0 0 19 12zM4.3 3L3 4.3 7.7 9H3v6h4l5 5v-6.7l4.2 4.2a5 5 0 0 1-1.7.9v2a7 7 0 0 0 3.1-1.5l2.6 2.6 1.3-1.3L4.3 3zM12 4L9.9 6.1 12 8.2V4z"/></svg>';
+    const ICON_FS = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>';
+
+    function fmt(s) {
+      if (!isFinite(s)) return '0:00';
+      s = Math.max(0, Math.floor(s));
+      const m = Math.floor(s / 60);
+      const sec = s % 60;
+      return `${m}:${sec.toString().padStart(2, '0')}`;
+    }
+
+    const playBtn = document.querySelector('#stack-controls .ctrl-play');
+    const muteBtn = document.querySelector('#stack-controls .ctrl-mute');
+    const fsBtn = document.querySelector('#stack-controls .ctrl-fs');
+    const seek = document.querySelector('#stack-controls .ctrl-seek');
+    const cur = document.querySelector('#stack-controls .ctrl-current');
+    const dur = document.querySelector('#stack-controls .ctrl-duration');
+    playBtn.innerHTML = ICON_PLAY;
+    muteBtn.innerHTML = ICON_MUTE;
+    fsBtn.innerHTML = ICON_FS;
+
+    function getActiveVideo() {
+      const card = stage.querySelectorAll('.stack-card')[current];
+      return card ? card.querySelector('video') : null;
+    }
+
+    demos.forEach((d, i) => {
+      const card = document.createElement('div');
+      card.className = 'stack-card';
+      card.dataset.index = String(i);
+      card.innerHTML = `
+        <img class="stack-poster" src="${d.poster}" alt="${d.title} preview">
+        <video class="stack-video" playsinline preload="metadata" muted loop poster="${d.poster}">
+          <source src="${d.src}" type="video/mp4">
+        </video>
+      `;
+      card.addEventListener('click', () => {
+        if (i !== current) setCurrent(i);
+      });
+      stage.appendChild(card);
+
+      const video = card.querySelector('video');
+      video.addEventListener('play', () => {
+        if (video === getActiveVideo()) playBtn.innerHTML = ICON_PAUSE;
+      });
+      video.addEventListener('pause', () => {
+        if (video === getActiveVideo()) playBtn.innerHTML = ICON_PLAY;
+      });
+      video.addEventListener('loadedmetadata', () => {
+        if (video === getActiveVideo()) dur.textContent = fmt(video.duration);
+      });
+      video.addEventListener('timeupdate', () => {
+        if (video !== getActiveVideo()) return;
+        if (!seek.dataset.dragging) {
+          const pct = video.duration ? (video.currentTime / video.duration) * 1000 : 0;
+          seek.value = String(pct);
+          seek.style.setProperty('--progress', `${pct / 10}%`);
+        }
+        cur.textContent = fmt(video.currentTime);
+      });
+
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'stack-dot';
+      dot.dataset.index = String(i);
+      dot.setAttribute('aria-label', `Show ${d.title}`);
+      dot.textContent = String(i + 1);
+      dot.addEventListener('click', () => setCurrent(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    playBtn.addEventListener('click', () => {
+      const v = getActiveVideo();
+      if (!v) return;
+      if (v.paused) v.play(); else v.pause();
+    });
+    seek.addEventListener('input', () => {
+      const v = getActiveVideo();
+      if (!v) return;
+      seek.dataset.dragging = '1';
+      const pct = Number(seek.value) / 1000;
+      seek.style.setProperty('--progress', `${pct * 100}%`);
+      cur.textContent = fmt(v.duration * pct);
+    });
+    seek.addEventListener('change', () => {
+      const v = getActiveVideo();
+      if (!v || !isFinite(v.duration)) { delete seek.dataset.dragging; return; }
+      const pct = Number(seek.value) / 1000;
+      const target = Math.min(Math.max(v.duration * pct, 0), Math.max(v.duration - 0.05, 0));
+      // Pin the UI to the requested position so a stale timeupdate can't snap it back.
+      seek.style.setProperty('--progress', `${pct * 100}%`);
+      cur.textContent = fmt(target);
+      v.currentTime = target;
+      // Keep the "dragging" flag on until the browser reports the seek finished,
+      // otherwise a timeupdate with the pre-seek currentTime yanks the bar back to 0.
+      const clear = () => {
+        delete seek.dataset.dragging;
+        v.removeEventListener('seeked', clear);
+      };
+      v.addEventListener('seeked', clear);
+      // Safety net in case 'seeked' never fires (e.g. very short seeks): clear next tick.
+      setTimeout(clear, 400);
+    });
+    muteBtn.addEventListener('click', () => {
+      const v = getActiveVideo();
+      if (!v) return;
+      v.muted = !v.muted;
+      muteBtn.innerHTML = v.muted ? ICON_MUTE : ICON_UNMUTE;
+    });
+    fsBtn.addEventListener('click', () => {
+      const v = getActiveVideo();
+      if (!v) return;
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else if (v.requestFullscreen) {
+        v.requestFullscreen();
+      } else if (v.webkitEnterFullscreen) {
+        v.webkitEnterFullscreen();
+      }
+    });
+
+    function setCurrent(idx) {
+      current = ((idx % demos.length) + demos.length) % demos.length;
+      if (playTimer) { clearTimeout(playTimer); playTimer = null; }
+      const cards = stage.querySelectorAll('.stack-card');
+      let activeVideo = null;
+      let activeCard = null;
+      cards.forEach((card, i) => {
+        let offset = i - current;
+        if (offset < 0) offset += demos.length;
+        card.style.setProperty('--offset', offset);
+        card.classList.toggle('is-active', offset === 0);
+        card.classList.toggle('is-hidden', offset > 3);
+        card.classList.remove('is-playing');
+        const video = card.querySelector('video');
+        video.pause();
+        video.currentTime = 0;
+        if (offset === 0) {
+          activeVideo = video;
+          activeCard = card;
+        }
+      });
+      dotsWrap.querySelectorAll('.stack-dot').forEach((dot, i) => {
+        dot.classList.toggle('is-current', i === current);
+      });
+      caption.textContent = demos[current].title;
+      playBtn.innerHTML = ICON_PLAY;
+      cur.textContent = '0:00';
+      dur.textContent = activeVideo && isFinite(activeVideo.duration) ? fmt(activeVideo.duration) : '0:00';
+      seek.value = '0';
+      seek.style.setProperty('--progress', '0%');
+      muteBtn.innerHTML = activeVideo && !activeVideo.muted ? ICON_UNMUTE : ICON_MUTE;
+      if (activeVideo && activeCard) {
+        playTimer = setTimeout(() => {
+          const p = activeVideo.play();
+          if (p && typeof p.catch === 'function') p.catch(() => {});
+          activeCard.classList.add('is-playing');
+        }, POSTER_HOLD_MS);
+      }
+    }
+
+    prevBtn.addEventListener('click', () => setCurrent(current - 1));
+    nextBtn.addEventListener('click', () => setCurrent(current + 1));
+
+    setCurrent(0);
+  </script>
+</body>
+</html>
