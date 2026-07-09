@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://caseclose.github.io/cma-harness/sitemap.xml
