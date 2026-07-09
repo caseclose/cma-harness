@@ -71,19 +71,19 @@ watch it play on the [live project page](https://caseclose.github.io/cma-harness
 
 <div align="center">
 
-<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/showcase.png" width="100%">
+<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/showcase.png?v=2" width="100%">
 
 <sub><b>A full multi-turn session.</b> Branching dialogue spanning generation, editing, cross-reference composition, and long-horizon visual recall.</sub>
 
 <br><br>
 
-<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/qualitative-case.png" width="100%">
+<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/qualitative-case.png?v=2" width="100%">
 
 <sub><b>Qualitative comparison.</b> CMA (Ours) vs. an all-context baseline on cross-turn grounding, consistent editing, and long-range recall.</sub>
 
 <br><br>
 
-<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/case-preview.png" width="100%">
+<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/case-preview.png?v=2" width="100%">
 
 <sub><b>Additional cases.</b> More Ours-vs-baseline examples across generation, editing, and cross-reference reasoning within a single session.</sub>
 
