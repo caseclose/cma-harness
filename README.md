@@ -24,7 +24,7 @@
 <sub>*Work done during an internship at WeChat Vision, Tencent Inc.</sub>
 
 <p>
-  <a href="assets/CMA_arxiv.pdf"><img alt="Paper" src="https://img.shields.io/badge/Paper-PDF-b31b1b?style=flat-square"></a>
+  <a href="https://caseclose.github.io/cma-harness/assets/CMA_arxiv.pdf"><img alt="Paper" src="https://img.shields.io/badge/Paper-PDF-b31b1b?style=flat-square"></a>
   <a href="https://caseclose.github.io/cma-harness/"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-4f8cff?style=flat-square"></a>
   <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img alt="Demo" src="https://img.shields.io/badge/Demo-Gallery-8b5cf6?style=flat-square"></a>
   <a href="https://caseclose.github.io/cma-harness/#benchmark"><img alt="Benchmark" src="https://img.shields.io/badge/M2CA--Bench-2%2C000%20turns-22d3ee?style=flat-square"></a>
