@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/banner.png" alt="CMA-Harness" width="100%">
+<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/banner.png" alt="CMA-Harness" width="100%">
 
 # Cognitive-structured Multimodal Agent
 
@@ -53,16 +53,16 @@ watch it play on the [live project page](https://caseclose.github.io/cma-harness
 <div align="center">
 <table>
 <tr>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/demos/demo-8.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/demos/demo-7.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/demos/demo-5.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/demos/demo-4.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/demos/demo-8.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/demos/demo-7.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/demos/demo-5.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/demos/demo-4.jpg" width="200"></a></td>
 </tr>
 <tr>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/demos/demo-2.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/demos/demo-3.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/demos/demo-1.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/demos/demo-6.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/demos/demo-2.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/demos/demo-3.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/demos/demo-1.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/demos/demo-6.jpg" width="200"></a></td>
 </tr>
 </table>
 </div>
@@ -71,19 +71,19 @@ watch it play on the [live project page](https://caseclose.github.io/cma-harness
 
 <div align="center">
 
-<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/showcase.png?v=2" width="100%">
+<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/showcase.png" width="100%">
 
 <sub><b>A full multi-turn session.</b> Branching dialogue spanning generation, editing, cross-reference composition, and long-horizon visual recall.</sub>
 
 <br><br>
 
-<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/qualitative-case.png?v=2" width="100%">
+<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/qualitative-case.png" width="100%">
 
 <sub><b>Qualitative comparison.</b> CMA (Ours) vs. an all-context baseline on cross-turn grounding, consistent editing, and long-range recall.</sub>
 
 <br><br>
 
-<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@main/assets/case-preview.png?v=2" width="100%">
+<img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/case-preview.png" width="100%">
 
 <sub><b>Additional cases.</b> More Ours-vs-baseline examples across generation, editing, and cross-reference reasoning within a single session.</sub>
 
