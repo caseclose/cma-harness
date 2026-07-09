@@ -1,0 +1,3 @@
+# README relies on raw HTML (centered header, banner, badges, demo table).
+# Formatters strip/rewrite that HTML and break the layout — keep it hands-off.
+README.md
