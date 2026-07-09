@@ -44,6 +44,29 @@ episodes, and plans understanding, generation, editing, and composition actions
 through a **Multimodal Executive Controller (MEC)**. The same cognitive structure is
 instantiated as **CMA-Harness**, a tool-augmented, multi-session deployment.
 
+## Demos
+
+Interactive multimodal sessions — search-driven generation, brand-fusion editing,
+cross-reference composition, and long-horizon visual recall. **Click any thumbnail to
+watch it play on the [live project page](https://caseclose.github.io/cma-harness/#demo-gallery).**
+
+<div align="center">
+<table>
+<tr>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-8.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-7.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-5.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-4.jpg" width="200"></a></td>
+</tr>
+<tr>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-2.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-3.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-1.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-6.jpg" width="200"></a></td>
+</tr>
+</table>
+</div>
+
 ## Key Results
 
 | Metric | Value | What it measures |
@@ -92,29 +115,6 @@ multimodal grounding.
   (semantic and structural negatives) block shortcut learning.
 - **Three evaluation subsets** — retrieval accuracy is reported on **All / Long /
   Hard** cuts of increasing difficulty.
-
-## Demos
-
-Interactive multimodal sessions — search-driven generation, brand-fusion editing,
-cross-reference composition, and long-horizon visual recall. **Click any thumbnail to
-watch it play on the [live project page](https://caseclose.github.io/cma-harness/#demo-gallery).**
-
-<div align="center">
-<table>
-<tr>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-8.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-7.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-5.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-4.jpg" width="200"></a></td>
-</tr>
-<tr>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-2.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-3.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-1.jpg" width="200"></a></td>
-<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-6.jpg" width="200"></a></td>
-</tr>
-</table>
-</div>
 
 ## Citation
 
