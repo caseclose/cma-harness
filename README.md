@@ -75,8 +75,6 @@ watch it play on the [live project page](https://caseclose.github.io/cma-harness
 
 <sub><b>A full multi-turn session.</b> Branching dialogue spanning generation, editing, cross-reference composition, and long-horizon visual recall.</sub>
 
-<br><br>
-
 <img src="https://cdn.jsdelivr.net/gh/caseclose/cma-harness@8d1b26468f5d75d91b7a113b8583d8ba344744ef/assets/qualitative-case.png" width="100%">
 
 <sub><b>Qualitative comparison.</b> CMA (Ours) vs. an all-context baseline on cross-turn grounding, consistent editing, and long-range recall.</sub>
