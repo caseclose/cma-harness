@@ -1,52 +1,38 @@
-# Cognitive-structured Multimodal Agent (CMA-Harness)
+<div align="center">
 
-**for Multimodal Understanding, Generation, and Editing**
+<img src="assets/banner.png" alt="CMA-Harness" width="100%">
 
-> Long-horizon multimodal memory, retrieval, generation, and editing — with a
-> tool-augmented deployment harness (**CMA-Harness**).
+# Cognitive-structured Multimodal Agent
 
-[**Feng Wang**](https://github.com/caseclose)¹\*, Canmiao Fu², Zhipeng Huang², Chen Li², Jing LYU², Ge Li¹
+### <sub>for Multimodal Understanding, Generation, and Editing</sub>
 
-¹Peking University  ²WeChat Vision, Tencent Inc.
+*Long-horizon multimodal memory, retrieval, generation, and editing — with a tool-augmented deployment harness (**CMA-Harness**).*
 
-<sub>\*Work done during an internship at WeChat Vision, Tencent Inc.</sub>
+<p>
+  <a href="mailto:fengwang@stu.pku.edu.cn"><b>Feng Wang</b></a><sup>1</sup>*&nbsp;&nbsp;
+  Canmiao Fu<sup>2</sup>&nbsp;&nbsp;
+  Zhipeng Huang<sup>2</sup>&nbsp;&nbsp;
+  Chen Li<sup>2</sup>&nbsp;&nbsp;
+  Jing LYU<sup>2</sup>&nbsp;&nbsp;
+  Ge Li<sup>1</sup>
+</p>
+
+<p>
+  <sup>1</sup>Peking University&nbsp;&nbsp;&nbsp;<sup>2</sup>WeChat Vision, Tencent Inc.
+</p>
+
+<sub>*Work done during an internship at WeChat Vision, Tencent Inc.</sub>
 
 <p>
   <a href="https://caseclose.github.io/cma-harness/"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-4f8cff?style=flat-square"></a>
   <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img alt="Demo" src="https://img.shields.io/badge/Demo-Gallery-8b5cf6?style=flat-square"></a>
   <a href="https://caseclose.github.io/cma-harness/#benchmark"><img alt="Benchmark" src="https://img.shields.io/badge/M2CA--Bench-2%2C000%20turns-22d3ee?style=flat-square"></a>
-  <img alt="Code" src="https://img.shields.io/badge/Code-Coming%20Soon-f59e0b?style=flat-square">
-  <img alt="Dataset" src="https://img.shields.io/badge/Dataset-Coming%20Soon-f59e0b?style=flat-square">
+  <a href="mailto:fengwang@stu.pku.edu.cn"><img alt="Contact" src="https://img.shields.io/badge/Contact-Email-ef4444?style=flat-square"></a>
 </p>
 
-**🌐 Project page → https://caseclose.github.io/cma-harness/**
+<b>🌐 Project page → <a href="https://caseclose.github.io/cma-harness/">caseclose.github.io/cma-harness</a></b>
 
----
-
-## 🚧 Code & Dataset — Coming Soon
-
-This repository will host the **official code and dataset** for the
-Cognitive-structured Multimodal Agent and its deployment harness (**CMA-Harness**).
-
-We are currently cleaning up the codebase and preparing the dataset for public
-release. **The code, model configurations, and the M2CA-Bench dataset will be
-released here.** Please **⭐ star / 👀 watch** this repository to be notified when
-they become available.
-
-### Release Roadmap
-
-| Component | Description | Status |
-| :--- | :--- | :---: |
-| 📄 **Paper** | Full technical report | 🔜 Coming soon |
-| 🧠 **Agent code** | PAE / EVM / CoRE / MEC inference pipeline | 🔜 Coming soon |
-| 🏋️ **Training code** | Staged SFT + RL for memory construction & retrieval | 🔜 Coming soon |
-| 🛠️ **CMA-Harness** | Tool-augmented deployment (17-tool registry, persistent memory, OpenAI-compatible serving) | 🔜 Coming soon |
-| 📊 **M2CA-Bench** | 100 sessions × 20 turns (2,000 annotated turns) with retrieval labels + hard negatives | 🔜 Coming soon |
-| 🧩 **Data engine** | Unified Scenario Engine for generating structured multi-turn dialogues | 🔜 Coming soon |
-| 💾 **Checkpoints** | Trained 8B agent weights | 🔜 Under review |
-
-> ⏳ Timelines are subject to internal review and open-source approval. This page
-> will be updated as each component is released.
+</div>
 
 ---
 
@@ -85,7 +71,7 @@ A cognitive structure for long-horizon multimodal interaction:
   multi-turn dialogues with retrieval annotations, enabling SFT and RL optimization
   for memory construction and retrieval.
 
-## M2CA-Bench (to be released)
+## M2CA-Bench
 
 The **Multi-turn Context Agent Benchmark (M2CA-Bench)** is a held-out evaluation set
 of **100 sessions × 20 turns (2,000 turns)** designed to stress-test long-horizon
@@ -110,8 +96,25 @@ multimodal grounding.
 ## Demos
 
 Interactive multimodal sessions — search-driven generation, brand-fusion editing,
-cross-reference composition, and long-horizon visual recall — are available on the
-[live project page](https://caseclose.github.io/cma-harness/#demo-gallery).
+cross-reference composition, and long-horizon visual recall. **Click any thumbnail to
+watch it play on the [live project page](https://caseclose.github.io/cma-harness/#demo-gallery).**
+
+<div align="center">
+<table>
+<tr>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-8.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-7.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-5.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-4.jpg" width="200"></a></td>
+</tr>
+<tr>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-2.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-3.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-1.jpg" width="200"></a></td>
+<td><a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img src="assets/demos/demo-6.jpg" width="200"></a></td>
+</tr>
+</table>
+</div>
 
 ## Citation
 
@@ -126,7 +129,10 @@ If you find this work useful, please consider citing:
 }
 ```
 
-## Contact
+---
 
-For questions about the paper, code, or dataset release, please open an
-[issue](https://github.com/caseclose/cma-harness/issues).
+<div align="center">
+
+📦 **The code and M2CA-Bench dataset will be released here soon — ⭐ star / 👀 watch to be notified.**
+
+</div>
