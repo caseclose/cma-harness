@@ -24,7 +24,7 @@
 <sub>*Work done during an internship at WeChat Vision, Tencent Inc.</sub>
 
 <p>
-  <a href="https://caseclose.github.io/cma-harness/assets/CMA_arxiv.pdf"><img alt="Paper" src="https://img.shields.io/badge/Paper-PDF-b31b1b?style=flat-square"></a>
+  <a href="https://arxiv.org/abs/2607.08497"><img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=flat-square"></a>
   <a href="https://caseclose.github.io/cma-harness/"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-4f8cff?style=flat-square"></a>
   <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img alt="Demo" src="https://img.shields.io/badge/Demo-Gallery-8b5cf6?style=flat-square"></a>
   <a href="https://caseclose.github.io/cma-harness/#benchmark"><img alt="Benchmark" src="https://img.shields.io/badge/M2CA--Bench-2%2C000%20turns-22d3ee?style=flat-square"></a>
@@ -139,8 +139,11 @@ If you find this work useful, please consider citing:
 @article{wang2026cognitive,
   title   = {Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing},
   author  = {Wang, Feng and Fu, Canmiao and Huang, Zhipeng and Li, Chen and LYU, Jing and Li, Ge},
-  journal = {arXiv preprint},
-  year    = {2026}
+  journal = {arXiv preprint arXiv:2607.08497},
+  year    = {2026},
+  eprint  = {2607.08497},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CV}
 }
 ```
 
