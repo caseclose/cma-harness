@@ -47,9 +47,17 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-theme="light">
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+  </div>
   <header class="site-header">
     <a class="brand" href="#">
       <img src="assets/wechat-logo.svg" alt="WeChat">
@@ -66,7 +74,12 @@
       </nav>
       <!-- Pipeline lives inside #method now; kept the nav lean. -->
       <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
-        <span class="theme-icon" aria-hidden="true">◐</span>
+        <span class="theme-icon theme-icon-moon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+        </span>
+        <span class="theme-icon theme-icon-sun" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </span>
         <span class="theme-label">Dark</span>
       </button>
     </div>
@@ -87,14 +100,38 @@
       <p class="author-note"><sup>*</sup>Work done during an internship at WeChat Vision, Tencent Inc.</p>
 
       <div class="actions" aria-label="Project links">
-        <a class="button primary" href="https://arxiv.org/abs/2607.08497" target="_blank" rel="noopener">Paper</a>
-        <a class="button" href="#demo-gallery">Demo</a>
-        <a class="button" href="#method">Method</a>
-        <a class="button" href="https://github.com/caseclose/cma-harness">Benchmark</a>
-        <a class="button" href="#results">Results</a>
-        <a class="button" href="https://github.com/caseclose/cma-harness">Code</a>
-        <a class="button" href="#bibtex">BibTeX</a>
-        <a class="button" href="https://github.com/caseclose/cma-harness">Dataset</a>
+        <a class="button primary" href="https://arxiv.org/abs/2607.08497" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Paper
+        </a>
+        <a class="button" href="#demo-gallery">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+          Demo
+        </a>
+        <a class="button" href="#method">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+          Method
+        </a>
+        <a class="button" href="https://github.com/caseclose/cma-harness">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 3v4a2 2 0 0 0 2 2h4"/></svg>
+          Benchmark
+        </a>
+        <a class="button" href="#results">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Results
+        </a>
+        <a class="button" href="https://github.com/caseclose/cma-harness">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85.01 1.71.12 2.51.34 1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.65.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>
+          Code
+        </a>
+        <a class="button" href="#bibtex">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 8H6a2 2 0 0 0-2 2v8"/><path d="M14 8h4a2 2 0 0 1 2 2v8"/><path d="M8 12h.01M16 12h.01"/></svg>
+          BibTeX
+        </a>
+        <a class="button" href="https://github.com/caseclose/cma-harness">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+          Dataset
+        </a>
       </div>
 
       <p class="hero-copy">
@@ -337,7 +374,12 @@
         <p class="eyebrow">Citation</p>
         <h2>BibTeX</h2>
       </div>
-      <pre><code>@article{wang2026cognitive,
+      <div class="panel bibtex-panel">
+        <div class="panel-head">
+          <span>BibTeX</span>
+          <button class="copy-btn" type="button" data-copy-target="bibtex-source">Copy</button>
+        </div>
+        <pre><code id="bibtex-source">@article{wang2026cognitive,
   title   = {Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing},
   author  = {Wang, Feng and Fu, Canmiao and Huang, Zhipeng and Li, Chen and LYU, Jing and Li, Ge},
   journal = {arXiv preprint arXiv:2607.08497},
@@ -346,11 +388,12 @@
   archivePrefix = {arXiv},
   primaryClass = {cs.CV}
 }</code></pre>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>Cognitive-structured Multimodal Agent. Static project page for public release.</p>
+    <p>Cognitive-structured Multimodal Agent · WeChat Vision, Tencent Inc. &amp; Peking University</p>
   </footer>
   <script>
     const toggle = document.querySelector('.theme-toggle');
@@ -369,6 +412,51 @@
       const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
       localStorage.setItem('cma-theme', nextTheme);
       setTheme(nextTheme);
+    });
+
+    const header = document.querySelector('.site-header');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const spySections = [...navLinks]
+      .map((link) => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    const onScrollChrome = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+      const y = window.scrollY + 140;
+      let currentId = spySections[0]?.id;
+      for (const section of spySections) {
+        if (section.offsetTop <= y) currentId = section.id;
+      }
+      navLinks.forEach((link) => {
+        link.classList.toggle('is-active', link.getAttribute('href') === `#${currentId}`);
+      });
+    };
+    window.addEventListener('scroll', onScrollChrome, { passive: true });
+    onScrollChrome();
+
+    document.querySelectorAll('.copy-btn').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const target = document.getElementById(btn.dataset.copyTarget);
+        if (!target) return;
+        const text = target.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch {
+          const area = document.createElement('textarea');
+          area.value = text;
+          document.body.appendChild(area);
+          area.select();
+          document.execCommand('copy');
+          area.remove();
+        }
+        const prev = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('is-copied');
+        setTimeout(() => {
+          btn.textContent = prev;
+          btn.classList.remove('is-copied');
+        }, 1600);
+      });
     });
 
     // -------- Demo gallery stacked-card viewer --------
