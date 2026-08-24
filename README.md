@@ -21,37 +21,34 @@ Ge Li<sup>1</sup>
 <sub>* Work done during an internship at WeChat Vision, Tencent Inc.</sub>
 
 <p>
-  <a href="https://arxiv.org/abs/2607.08497"><img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv%202607.08497-b31b1b?style=flat-square"></a>
-  <a href="https://caseclose.github.io/cma-harness/"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-4f8cff?style=flat-square"></a>
-  <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img alt="Demo" src="https://img.shields.io/badge/Demo-Gallery-8b5cf6?style=flat-square"></a>
-  <a href="https://caseclose.github.io/cma-harness/#benchmark"><img alt="Benchmark" src="https://img.shields.io/badge/M2CA--Bench-2%2C000%20turns-0ea5e9?style=flat-square"></a>
-  <img alt="Live" src="https://img.shields.io/badge/Live-Gray--scale%20testing-07C160?style=flat-square">
+  <a href="https://arxiv.org/abs/2607.08497"><img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv%202607.08497-b31b1b?style=for-the-badge"></a>
+  <a href="https://caseclose.github.io/cma-harness/"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-4f8cff?style=for-the-badge"></a>
+  <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img alt="Demo" src="https://img.shields.io/badge/Demo-Gallery-8b5cf6?style=for-the-badge"></a>
+  <a href="https://caseclose.github.io/cma-harness/#benchmark"><img alt="Benchmark" src="https://img.shields.io/badge/M2CA--Bench-2%2C000%20turns-0ea5e9?style=for-the-badge"></a>
+  <img alt="Live" src="https://img.shields.io/badge/Live-Gray--scale%20testing-07C160?style=for-the-badge&logo=wechat&logoColor=white">
+</p>
+
+<img src="assets/wechat-logo.svg" width="44" height="44" alt="WeChat">
+
+**Adapted parts of this architecture have been rolled out to WeChat Xiaowei Agent for gray-scale testing.**
+
+<sub>该架构经调整的部分内容已上线到微信小微Agent中进行灰测。</sub>
+
+<p>
+  <a href="#tldr">TL;DR</a>
+  &ensp;·&ensp;
+  <a href="#key-results">Results</a>
+  &ensp;·&ensp;
+  <a href="#demos">Demos</a>
+  &ensp;·&ensp;
+  <a href="#method">Method</a>
+  &ensp;·&ensp;
+  <a href="#m2ca-bench">Benchmark</a>
+  &ensp;·&ensp;
+  <a href="#citation">Citation</a>
 </p>
 
 </div>
-
-<table>
-<tr>
-<td width="72" align="center" valign="middle">
-  <img src="assets/wechat-logo.svg" width="40" height="40" alt="WeChat">
-</td>
-<td valign="middle">
-
-**Live · Gray-scale testing** — Adapted parts of this architecture have been rolled out to WeChat Xiaowei Agent.<br>
-<sub>该架构经调整的部分内容已上线到微信小微Agent中进行灰测。</sub>
-
-</td>
-</tr>
-</table>
-
-<p align="center">
-  <a href="#tldr">TL;DR</a> ·
-  <a href="#key-results">Results</a> ·
-  <a href="#demos">Demos</a> ·
-  <a href="#method">Method</a> ·
-  <a href="#m2ca-bench">Benchmark</a> ·
-  <a href="#citation">Citation</a>
-</p>
 
 ---
 
