@@ -33,6 +33,11 @@
 
 <b>🌐 Project page → <a href="https://caseclose.github.io/cma-harness/">caseclose.github.io/cma-harness</a></b>
 
+<br>
+
+> **灰度测试**　该架构经调整的部分内容已上线到微信小微Agent中进行灰测。  
+> *Adapted parts of this architecture have been rolled out to WeChat Xiaowei Agent for gray-scale testing.*
+
 </div>
 
 ---
