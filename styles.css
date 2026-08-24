@@ -1435,14 +1435,14 @@ figcaption {
 }
 
 .dark .figure-card {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--section-band-text);
+  border-color: var(--line);
+  background: var(--card);
   box-shadow: none;
 }
 
 .dark figcaption {
-  color: rgba(255, 255, 255, 0.66);
+  color: var(--figcaption);
 }
 
 .link-card {
