@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="assets/wechat-logo.svg" width="72" height="72" alt="WeChat">
-
 # Cognitive-structured Multimodal Agent
 
 **for Multimodal Understanding, Generation, and Editing**
@@ -27,34 +25,34 @@ Ge Li<sup>1</sup>
 <a href="https://caseclose.github.io/cma-harness/"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-4f8cff?style=for-the-badge"></a>
 <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img alt="Demo" src="https://img.shields.io/badge/Demo-Gallery-8b5cf6?style=for-the-badge"></a>
 <a href="https://caseclose.github.io/cma-harness/#benchmark"><img alt="Benchmark" src="https://img.shields.io/badge/M2CA--Bench-2%2C000%20turns-0ea5e9?style=for-the-badge"></a>
-<img alt="Live" src="https://img.shields.io/badge/Live-Gray--scale%20testing-07C160?style=for-the-badge">
 
 </div>
 
-<br>
-
 <table>
 <tr>
-<td>
+<td width="92" align="center" valign="middle">
+  <img src="assets/wechat-logo.svg" width="56" height="56" alt="WeChat">
+</td>
+<td valign="middle">
 
-🟢 &nbsp;**Live · Gray-scale testing**
+<img alt="Live" src="https://img.shields.io/badge/Live-Gray--scale%20testing-07C160?style=flat-square">
 
 **Adapted parts of this architecture have been rolled out to WeChat Xiaowei Agent for gray-scale testing.**
 
-该架构经调整的部分内容已上线到微信小微Agent中进行灰测。
+<sub>该架构经调整的部分内容已上线到微信小微Agent中进行灰测。</sub>
 
 </td>
 </tr>
 </table>
 
 <p align="center">
-  <a href="https://caseclose.github.io/cma-harness/"><b>🌐 Project page</b></a>
+  <a href="https://caseclose.github.io/cma-harness/"><b>Project page</b></a>
   &nbsp;·&nbsp;
-  <a href="https://arxiv.org/abs/2607.08497"><b>📄 Paper</b></a>
+  <a href="https://arxiv.org/abs/2607.08497"><b>Paper</b></a>
   &nbsp;·&nbsp;
-  <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><b>▶ Demo</b></a>
+  <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><b>Demo</b></a>
   &nbsp;·&nbsp;
-  <a href="#citation"><b>📚 Citation</b></a>
+  <a href="#citation"><b>Citation</b></a>
 </p>
 
 ---
