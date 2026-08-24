@@ -319,10 +319,92 @@
         </div>
       </div>
 
-      <div class="bench-results">
-        <div class="bench-result"><strong>91.4%</strong><span>All &middot; 2,000 turns</span></div>
-        <div class="bench-result"><strong>89.4%</strong><span>Long &middot; turns 11–20</span></div>
-        <div class="bench-result"><strong>82.0%</strong><span>Hard &middot; very_hard @ 11–20</span></div>
+      <div class="bench-compare">
+        <div class="bench-compare-head">
+          <h3>Comparison on M2CA-Bench</h3>
+          <p>
+            The same evaluation protocol, against unified models and all-context agents.
+            CMA-8B stays ahead as the dialogue gets longer and harder.
+          </p>
+        </div>
+
+        <div class="bench-compare-card">
+          <h4>English retrieval accuracy</h4>
+          <p class="bench-compare-note">Higher is better. Splits follow retrieval distance.</p>
+          <div class="bench-bars-grid">
+            <section class="bench-bars-group">
+              <h5>All</h5>
+              <p>All 20 turns &middot; 2,000 turns</p>
+              <div class="bench-bar-list">
+                <div class="bench-bar" aria-label="Unified Model (BAGEL): 23.3%"><span title="Unified Model (BAGEL)">BAGEL</span><i style="--value: 23.3%"></i><b>23.3%</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-8B All-Context: 78.9%"><span title="Agent Baseline-8B (All-Context)">Agent 8B</span><i style="--value: 78.9%"></i><b>78.9%</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-32B All-Context: 81.9%"><span title="Agent Baseline-32B (All-Context)">Agent 32B</span><i style="--value: 81.9%"></i><b>81.9%</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-8B: 81.8%"><span title="Multi-Agent Baseline-8B">Multi 8B</span><i style="--value: 81.8%"></i><b>81.8%</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-32B: 83.2%"><span title="Multi-Agent Baseline-32B">Multi 32B</span><i style="--value: 83.2%"></i><b>83.2%</b></div>
+                <div class="bench-bar is-ours" aria-label="CMA (Ours, 8B): 91.4%"><span title="CMA (Ours, 8B)">CMA 8B</span><i style="--value: 91.4%"></i><b>91.4%</b></div>
+              </div>
+            </section>
+            <section class="bench-bars-group">
+              <h5>Long</h5>
+              <p>Turns 11–20 &middot; extended memory</p>
+              <div class="bench-bar-list">
+                <div class="bench-bar" aria-label="Unified Model (BAGEL): 5.6%"><span title="Unified Model (BAGEL)">BAGEL</span><i style="--value: 5.6%"></i><b>5.6%</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-8B All-Context: 67.0%"><span title="Agent Baseline-8B (All-Context)">Agent 8B</span><i style="--value: 67%"></i><b>67.0%</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-32B All-Context: 72.1%"><span title="Agent Baseline-32B (All-Context)">Agent 32B</span><i style="--value: 72.1%"></i><b>72.1%</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-8B: 75.2%"><span title="Multi-Agent Baseline-8B">Multi 8B</span><i style="--value: 75.2%"></i><b>75.2%</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-32B: 79.4%"><span title="Multi-Agent Baseline-32B">Multi 32B</span><i style="--value: 79.4%"></i><b>79.4%</b></div>
+                <div class="bench-bar is-ours" aria-label="CMA (Ours, 8B): 89.4%"><span title="CMA (Ours, 8B)">CMA 8B</span><i style="--value: 89.4%"></i><b>89.4%</b></div>
+              </div>
+            </section>
+            <section class="bench-bars-group">
+              <h5>Hard</h5>
+              <p>very_hard subset @ turns 11–20</p>
+              <div class="bench-bar-list">
+                <div class="bench-bar" aria-label="Unified Model (BAGEL): 1.9%"><span title="Unified Model (BAGEL)">BAGEL</span><i style="--value: 1.9%"></i><b>1.9%</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-8B All-Context: 59.5%"><span title="Agent Baseline-8B (All-Context)">Agent 8B</span><i style="--value: 59.5%"></i><b>59.5%</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-32B All-Context: 62.0%"><span title="Agent Baseline-32B (All-Context)">Agent 32B</span><i style="--value: 62%"></i><b>62.0%</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-8B: 63.6%"><span title="Multi-Agent Baseline-8B">Multi 8B</span><i style="--value: 63.6%"></i><b>63.6%</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-32B: 72.1%"><span title="Multi-Agent Baseline-32B">Multi 32B</span><i style="--value: 72.1%"></i><b>72.1%</b></div>
+                <div class="bench-bar is-ours" aria-label="CMA (Ours, 8B): 82.0%"><span title="CMA (Ours, 8B)">CMA 8B</span><i style="--value: 82%"></i><b>82.0%</b></div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="bench-compare-card">
+          <h4>Gemini generation quality</h4>
+          <p class="bench-compare-note">Overall score across understanding, generation, editing, and composition. Out of 10.</p>
+          <div class="bench-bars-grid two">
+            <section class="bench-bars-group">
+              <h5>English overall</h5>
+              <div class="bench-bar-list">
+                <div class="bench-bar" aria-label="Unified Model (BAGEL): 4.97"><span title="Unified Model (BAGEL)">BAGEL</span><i style="--value: 49.7%"></i><b>4.97</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-8B: 7.89"><span title="Agent Baseline-8B (All-Context)">Agent 8B</span><i style="--value: 78.9%"></i><b>7.89</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-32B: 7.93"><span title="Agent Baseline-32B (All-Context)">Agent 32B</span><i style="--value: 79.3%"></i><b>7.93</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-8B: 8.07"><span title="Multi-Agent Baseline-8B">Multi 8B</span><i style="--value: 80.7%"></i><b>8.07</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-32B: 8.24"><span title="Multi-Agent Baseline-32B">Multi 32B</span><i style="--value: 82.4%"></i><b>8.24</b></div>
+                <div class="bench-bar is-ours" aria-label="CMA (Ours, 8B): 8.49"><span title="CMA (Ours, 8B)">CMA 8B</span><i style="--value: 84.9%"></i><b>8.49</b></div>
+              </div>
+            </section>
+            <section class="bench-bars-group">
+              <h5>Chinese overall</h5>
+              <div class="bench-bar-list">
+                <div class="bench-bar" aria-label="Unified Model (BAGEL): 4.77"><span title="Unified Model (BAGEL)">BAGEL</span><i style="--value: 47.7%"></i><b>4.77</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-8B: 7.10"><span title="Agent Baseline-8B (All-Context)">Agent 8B</span><i style="--value: 71%"></i><b>7.10</b></div>
+                <div class="bench-bar" aria-label="Agent Baseline-32B: 7.45"><span title="Agent Baseline-32B (All-Context)">Agent 32B</span><i style="--value: 74.5%"></i><b>7.45</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-8B: 7.63"><span title="Multi-Agent Baseline-8B">Multi 8B</span><i style="--value: 76.3%"></i><b>7.63</b></div>
+                <div class="bench-bar" aria-label="Multi-Agent Baseline-32B: 7.91"><span title="Multi-Agent Baseline-32B">Multi 32B</span><i style="--value: 79.1%"></i><b>7.91</b></div>
+                <div class="bench-bar is-ours" aria-label="CMA (Ours, 8B): 8.53"><span title="CMA (Ours, 8B)">CMA 8B</span><i style="--value: 85.3%"></i><b>8.53</b></div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="bench-compare-insights">
+          <div><strong>91.4%</strong><span>All-set retrieval, +8.2 pp over Multi-32B</span></div>
+          <div><strong>82.0%</strong><span>Hard split, still ahead of 32B agents</span></div>
+          <div><strong>+18.4 pp</strong><span>Hard gain vs Multi-Agent 8B</span></div>
+        </div>
       </div>
     </section>
 
