@@ -27,7 +27,7 @@
   --showcase-bg: #fbfaf7;
   --showcase-shadow: 0 16px 48px rgba(23, 32, 51, 0.10);
   --card-text: #515d70;
-  --figcaption: var(--muted);
+  --figcaption: #334155;
   --section-band-text: #172033;
   --section-band-eyebrow: #3367d6;
   --section-band-heading: #172033;
@@ -74,7 +74,7 @@ body[data-theme="dark"] {
   --showcase-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.03));
   --showcase-shadow: 0 22px 70px rgba(0, 0, 0, 0.32);
   --card-text: #b3bdcf;
-  --figcaption: #98a4b8;
+  --figcaption: #d7e1f2;
   --section-band-text: #fff;
   --section-band-eyebrow: #9db8ff;
   --section-band-heading: #fff;
@@ -1381,6 +1381,7 @@ figcaption {
   margin-top: 14px;
   color: var(--figcaption);
   font-size: 14px;
+  line-height: 1.55;
   text-align: center;
 }
 
@@ -1442,8 +1443,7 @@ figcaption {
 }
 
 .dark figcaption {
-  color: var(--section-band-text);
-  opacity: 0.82;
+  color: var(--figcaption);
 }
 
 .link-card {
