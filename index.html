@@ -319,13 +319,13 @@
         <div class="card">
           <h3>Three evaluation subsets</h3>
           <p>
-            Retrieval accuracy is reported on three cuts of increasing difficulty, aligned with
-            typical long-horizon failure modes:
+            Retrieval accuracy is reported on three subsets of increasing difficulty
+            (paper Sec.&nbsp;5.2):
           </p>
           <ul class="bench-list">
-            <li><strong>All</strong> — all 2,000 turns</li>
-            <li><strong>Long</strong> — turns 11–20, testing extended memory</li>
-            <li><strong>Hard</strong> — <code>very_hard</code> subset within turns 11–20</li>
+            <li><strong>Full</strong> — all 20 turns (2,000 turns)</li>
+            <li><strong>Medium</strong> — turns 11–20, longer context</li>
+            <li><strong>Hard</strong> — the <code>very_hard</code> subset within turns 11–20</li>
           </ul>
         </div>
       </div>
@@ -341,10 +341,10 @@
 
         <div class="bench-compare-card">
           <h4>English retrieval accuracy</h4>
-          <p class="bench-compare-note">Higher is better. Splits follow retrieval distance.</p>
+          <p class="bench-compare-note">Higher is better. Subsets follow paper Sec.&nbsp;5.2: Full = all 20 turns; Medium = turns 11–20; Hard = <code>very_hard</code> turns within 11–20.</p>
           <div class="bench-bars-grid">
             <section class="bench-bars-group">
-              <h5>All</h5>
+              <h5>Full</h5>
               <p>All 20 turns &middot; 2,000 turns</p>
               <div class="bench-bar-list">
                 <div class="bench-bar" aria-label="Unified Model (BAGEL): 23.3%"><span title="Unified Model (BAGEL)">BAGEL</span><i style="--value: 23.3%"></i><b>23.3%</b></div>
@@ -356,8 +356,8 @@
               </div>
             </section>
             <section class="bench-bars-group">
-              <h5>Long</h5>
-              <p>Turns 11–20 &middot; extended memory</p>
+              <h5>Medium</h5>
+              <p>Turns 11–20 &middot; longer context</p>
               <div class="bench-bar-list">
                 <div class="bench-bar" aria-label="Unified Model (BAGEL): 5.6%"><span title="Unified Model (BAGEL)">BAGEL</span><i style="--value: 5.6%"></i><b>5.6%</b></div>
                 <div class="bench-bar" aria-label="Agent Baseline-8B All-Context: 67.0%"><span title="Agent Baseline-8B (All-Context)">Agent 8B</span><i style="--value: 67%"></i><b>67.0%</b></div>
@@ -384,10 +384,10 @@
 
         <div class="bench-compare-card">
           <h4>Chinese retrieval accuracy</h4>
-          <p class="bench-compare-note">Same protocol as English. Higher is better. From paper Table 3.</p>
+          <p class="bench-compare-note">Same subsets as English (paper Table 3 / Sec.&nbsp;5.2). Higher is better.</p>
           <div class="bench-bars-grid">
             <section class="bench-bars-group">
-              <h5>All</h5>
+              <h5>Full</h5>
               <p>All 20 turns &middot; 2,000 turns</p>
               <div class="bench-bar-list">
                 <div class="bench-bar" aria-label="Unified Model (BAGEL): 17.8%"><span title="Unified Model (BAGEL)">BAGEL</span><i style="--value: 17.8%"></i><b>17.8%</b></div>
@@ -399,8 +399,8 @@
               </div>
             </section>
             <section class="bench-bars-group">
-              <h5>Long</h5>
-              <p>Turns 11–20 &middot; extended memory</p>
+              <h5>Medium</h5>
+              <p>Turns 11–20 &middot; longer context</p>
               <div class="bench-bar-list">
                 <div class="bench-bar" aria-label="Unified Model (BAGEL): 3.2%"><span title="Unified Model (BAGEL)">BAGEL</span><i style="--value: 3.2%"></i><b>3.2%</b></div>
                 <div class="bench-bar" aria-label="Agent Baseline-8B All-Context: 66.0%"><span title="Agent Baseline-8B (All-Context)">Agent 8B</span><i style="--value: 66%"></i><b>66.0%</b></div>
@@ -455,8 +455,8 @@
         </div>
 
         <div class="bench-compare-insights">
-          <div><strong>91.4%</strong><span>English All, +8.2 pp over Multi-32B</span></div>
-          <div><strong>89.6%</strong><span>Chinese All, +5.1 pp over Multi-32B</span></div>
+          <div><strong>91.4%</strong><span>English Full, +8.2 pp over Multi-32B</span></div>
+          <div><strong>89.6%</strong><span>Chinese Full, +5.1 pp over Multi-32B</span></div>
           <div><strong>82.0%</strong><span>English Hard, still ahead of 32B agents</span></div>
           <div><strong>+18.4 pp</strong><span>English Hard gain vs Multi-Agent 8B</span></div>
         </div>

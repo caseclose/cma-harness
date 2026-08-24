@@ -62,8 +62,8 @@ We introduce a **memory-centric multimodal agent** that externalizes visual hist
 
 | **91.4%** | **89.6%** | **82.0%** | **12.7 s** | **8.53 / 10** |
 | :---: | :---: | :---: | :---: | :---: |
-| English All | Chinese All | English Hard | Per-turn runtime | Gemini quality |
-| retrieval @ 20 turns | cross-lingual recall | very_hard @ 11–20 | ~½ of 32B all-context | Chinese generation |
+| English Full | Chinese Full | English Hard | Per-turn runtime | Gemini quality |
+| all 20 turns | all 20 turns | very_hard ⊂ turns 11–20 | ~½ of 32B all-context | Chinese generation |
 
 </div>
 
@@ -136,11 +136,11 @@ The **Multi-turn Context Agent Benchmark (M2CA-Bench)** is a held-out evaluation
 - **Structured scenario representation** — each turn is annotated as `(tᵢ, τᵢ, Rᵢ*, dᵢ, fᵢ)`: user input, task type, ground-truth retrieval set, difficulty, and challenge tags. Topics span **8 domains** with four task modes per topic — `generate`, `edit`, `cross-reference-edit`, `understand`.
 - **Four difficulty strata** — stratified by topic shift, temporal span, multi-image interaction, and ambiguity (`easy` / `medium` / `hard` / `very_hard`).
 - **Hard-negative design** — *high-similarity confounders* (near-duplicate images differing only in color, lighting, or material) and *negative retrieval samples* (semantic and structural negatives) block shortcut learning.
-- **Three evaluation subsets** — retrieval accuracy is reported on **All / Long / Hard** cuts of increasing difficulty.
+- **Three evaluation subsets** (paper Sec. 5.2) — **Full** (all 20 turns), **Medium** (turns 11–20), **Hard** (`very_hard` turns within 11–20).
 
 Retrieval accuracy on M2CA-Bench ([paper Table 3](https://arxiv.org/abs/2607.08497)):
 
-| Method | EN All | EN Long | EN Hard | ZH All | ZH Long | ZH Hard |
+| Method | EN Full | EN Med. | EN Hard | ZH Full | ZH Med. | ZH Hard |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | BAGEL | 23.3 | 5.6 | 1.9 | 17.8 | 3.2 | 2.3 |
 | Agent 8B | 78.9 | 67.0 | 59.5 | 76.7 | 66.0 | 60.8 |
