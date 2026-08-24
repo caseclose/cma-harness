@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing</title>
   <meta name="description" content="Cognitive-structured Multimodal Agent (CMA-Harness): a memory-centric multimodal agent for long-horizon understanding, generation, and editing. Episodic Visual Memory + selective retrieval, with the M2CA-Bench benchmark. Paper, code, and project page.">
   <meta name="keywords" content="Cognitive-structured Multimodal Agent, CMA-Harness, multimodal agent, episodic visual memory, multimodal understanding generation editing, long-horizon multimodal dialogue, M2CA-Bench, visual retrieval, WeChat Vision, Tencent">
@@ -64,7 +64,7 @@
       <span>CMA-Harness</span>
     </a>
     <div class="header-actions">
-      <nav>
+      <nav id="site-nav">
         <a href="#demo-gallery">Demo</a>
         <a href="#method">Method</a>
         <a href="#benchmark">Benchmark</a>
@@ -73,6 +73,13 @@
         <a href="#bibtex">BibTeX</a>
       </nav>
       <!-- Pipeline lives inside #method now; kept the nav lean. -->
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
       <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
         <span class="theme-icon theme-icon-moon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
@@ -91,8 +98,12 @@
       <h1>Cognitive-structured Multimodal Agent</h1>
       <h2>for Multimodal Understanding, Generation, and Editing</h2>
       <p class="authors">
-        <a class="author-link" href="https://github.com/caseclose" target="_blank" rel="noopener">Feng Wang</a><sup>1,*</sup>, Canmiao Fu<sup>2</sup>, Zhipeng Huang<sup>2</sup>,
-        Chen Li<sup>2</sup>, Jing LYU<sup>2</sup>, Ge Li<sup>1</sup>
+        <span class="author"><a class="author-link" href="https://github.com/caseclose" target="_blank" rel="noopener">Feng Wang</a><sup>1,*</sup></span>
+        <span class="author">Canmiao Fu<sup>2</sup></span>
+        <span class="author">Zhipeng Huang<sup>2</sup></span>
+        <span class="author">Chen Li<sup>2</sup></span>
+        <span class="author">Jing LYU<sup>2</sup></span>
+        <span class="author">Ge Li<sup>1</sup></span>
       </p>
       <p class="affiliations">
         <sup>1</sup>Peking University &nbsp;&nbsp; <sup>2</sup>WeChat Vision, Tencent Inc.
@@ -553,10 +564,29 @@
     });
 
     const header = document.querySelector('.site-header');
+    const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     const spySections = [...navLinks]
       .map((link) => document.querySelector(link.getAttribute('href')))
       .filter(Boolean);
+
+    const setNavOpen = (open) => {
+      header.classList.toggle('is-nav-open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    navToggle.addEventListener('click', () => {
+      setNavOpen(!header.classList.contains('is-nav-open'));
+    });
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => setNavOpen(false));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setNavOpen(false);
+    });
+    document.addEventListener('click', (event) => {
+      if (!header.contains(event.target)) setNavOpen(false);
+    });
 
     const onScrollChrome = () => {
       header.classList.toggle('is-scrolled', window.scrollY > 8);
@@ -791,6 +821,30 @@
 
     prevBtn.addEventListener('click', () => setCurrent(current - 1));
     nextBtn.addEventListener('click', () => setCurrent(current + 1));
+
+    let swipeX = null;
+    let swipeY = null;
+    const swipeFrom = (event) => event.changedTouches ? event.changedTouches[0] : event;
+    const isGalleryControl = (target) => Boolean(target.closest('#stack-controls, .stack-nav, .stack-dot'));
+    stage.addEventListener('touchstart', (event) => {
+      if (isGalleryControl(event.target)) {
+        swipeX = null;
+        return;
+      }
+      const touch = swipeFrom(event);
+      swipeX = touch.clientX;
+      swipeY = touch.clientY;
+    }, { passive: true });
+    stage.addEventListener('touchend', (event) => {
+      if (swipeX == null) return;
+      const touch = swipeFrom(event);
+      const dx = touch.clientX - swipeX;
+      const dy = touch.clientY - swipeY;
+      swipeX = null;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) {
+        setCurrent(current + (dx < 0 ? 1 : -1));
+      }
+    }, { passive: true });
 
     setCurrent(0);
   </script>
