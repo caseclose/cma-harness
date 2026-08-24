@@ -1,48 +1,43 @@
 <div align="center">
+  <img src="https://github.com/caseclose/cma-harness/raw/main/assets/banner.png" alt="CMA-Harness overview" width="100%">
+</div>
+
+<div align="center">
 
 # Cognitive-structured Multimodal Agent
 
-**for Multimodal Understanding, Generation, and Editing**
+### for Multimodal Understanding, Generation, and Editing
 
 <sub>Long-horizon multimodal memory, retrieval, generation, and editing — with a tool-augmented deployment harness (**CMA-Harness**).</sub>
 
-<br>
-
-<a href="mailto:fengwang@stu.pku.edu.cn"><b>Feng Wang</b></a><sup>1,*</sup>&ensp;
-Canmiao Fu<sup>2</sup>&ensp;
-Zhipeng Huang<sup>2</sup>&ensp;
-Chen Li<sup>2</sup>&ensp;
-Jing LYU<sup>2</sup>&ensp;
+<a href="mailto:fengwang@stu.pku.edu.cn"><b>Feng Wang</b></a><sup>1,*</sup> &nbsp;
+Canmiao Fu<sup>2</sup> &nbsp;
+Zhipeng Huang<sup>2</sup> &nbsp;
+Chen Li<sup>2</sup> &nbsp;
+Jing LYU<sup>2</sup> &nbsp;
 Ge Li<sup>1</sup>
 
-<sup>1</sup> Peking University &emsp; <sup>2</sup> WeChat Vision, Tencent Inc.
-
+<sup>1</sup> Peking University &emsp; <sup>2</sup> WeChat Vision, Tencent Inc.<br>
 <sub>* Work done during an internship at WeChat Vision, Tencent Inc.</sub>
 
-<br>
-
-<a href="https://arxiv.org/abs/2607.08497"><img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv%202607.08497-b31b1b?style=for-the-badge"></a>
-<a href="https://caseclose.github.io/cma-harness/"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-4f8cff?style=for-the-badge"></a>
-<a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img alt="Demo" src="https://img.shields.io/badge/Demo-Gallery-8b5cf6?style=for-the-badge"></a>
-<a href="https://caseclose.github.io/cma-harness/#benchmark"><img alt="Benchmark" src="https://img.shields.io/badge/M2CA--Bench-2%2C000%20turns-0ea5e9?style=for-the-badge"></a>
-
-<br>
-
-<img src="assets/banner.png" alt="CMA-Harness overview" width="100%">
+<p>
+  <a href="https://arxiv.org/abs/2607.08497"><img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv%202607.08497-b31b1b?style=flat-square"></a>
+  <a href="https://caseclose.github.io/cma-harness/"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-4f8cff?style=flat-square"></a>
+  <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img alt="Demo" src="https://img.shields.io/badge/Demo-Gallery-8b5cf6?style=flat-square"></a>
+  <a href="https://caseclose.github.io/cma-harness/#benchmark"><img alt="Benchmark" src="https://img.shields.io/badge/M2CA--Bench-2%2C000%20turns-0ea5e9?style=flat-square"></a>
+  <img alt="Live" src="https://img.shields.io/badge/Live-Gray--scale%20testing-07C160?style=flat-square">
+</p>
 
 </div>
 
 <table>
 <tr>
-<td width="92" align="center" valign="middle">
-  <img src="assets/wechat-logo.svg" width="56" height="56" alt="WeChat">
+<td width="72" align="center" valign="middle">
+  <img src="assets/wechat-logo.svg" width="40" height="40" alt="WeChat">
 </td>
 <td valign="middle">
 
-<img alt="Live" src="https://img.shields.io/badge/Live-Gray--scale%20testing-07C160?style=flat-square">
-
-**Adapted parts of this architecture have been rolled out to WeChat Xiaowei Agent for gray-scale testing.**
-
+**Live · Gray-scale testing** — Adapted parts of this architecture have been rolled out to WeChat Xiaowei Agent.<br>
 <sub>该架构经调整的部分内容已上线到微信小微Agent中进行灰测。</sub>
 
 </td>
@@ -50,13 +45,12 @@ Ge Li<sup>1</sup>
 </table>
 
 <p align="center">
-  <a href="https://caseclose.github.io/cma-harness/"><b>Project page</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://arxiv.org/abs/2607.08497"><b>Paper</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><b>Demo</b></a>
-  &nbsp;·&nbsp;
-  <a href="#citation"><b>Citation</b></a>
+  <a href="#tldr">TL;DR</a> ·
+  <a href="#key-results">Results</a> ·
+  <a href="#demos">Demos</a> ·
+  <a href="#method">Method</a> ·
+  <a href="#m2ca-bench">Benchmark</a> ·
+  <a href="#citation">Citation</a>
 </p>
 
 ---
@@ -69,10 +63,10 @@ We introduce a **memory-centric multimodal agent** that externalizes visual hist
 
 <div align="center">
 
-| **91.4%** | **89.4%** | **82.0%** | **12.7 s** | **8.53 / 10** |
+| **91.4%** | **89.6%** | **82.0%** | **12.7 s** | **8.53 / 10** |
 | :---: | :---: | :---: | :---: | :---: |
-| All · retrieval | Long · turns 11–20 | Hard · very_hard | Per-turn runtime | Gemini quality |
-| 20-turn English sessions | Extended memory | Hardest long-span cut | ~½ of 32B all-context | Chinese generation |
+| English All | Chinese All | English Hard | Per-turn runtime | Gemini quality |
+| retrieval @ 20 turns | cross-lingual recall | very_hard @ 11–20 | ~½ of 32B all-context | Chinese generation |
 
 </div>
 
@@ -146,6 +140,17 @@ The **Multi-turn Context Agent Benchmark (M2CA-Bench)** is a held-out evaluation
 - **Four difficulty strata** — stratified by topic shift, temporal span, multi-image interaction, and ambiguity (`easy` / `medium` / `hard` / `very_hard`).
 - **Hard-negative design** — *high-similarity confounders* (near-duplicate images differing only in color, lighting, or material) and *negative retrieval samples* (semantic and structural negatives) block shortcut learning.
 - **Three evaluation subsets** — retrieval accuracy is reported on **All / Long / Hard** cuts of increasing difficulty.
+
+Retrieval accuracy on M2CA-Bench ([paper Table 3](https://arxiv.org/abs/2607.08497)):
+
+| Method | EN All | EN Long | EN Hard | ZH All | ZH Long | ZH Hard |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| BAGEL | 23.3 | 5.6 | 1.9 | 17.8 | 3.2 | 2.3 |
+| Agent 8B | 78.9 | 67.0 | 59.5 | 76.7 | 66.0 | 60.8 |
+| Agent 32B | 81.9 | 72.1 | 62.0 | 80.3 | 72.5 | 71.4 |
+| Multi 8B | 81.8 | 75.2 | 63.6 | 82.5 | 77.6 | 77.8 |
+| Multi 32B | 83.2 | 79.4 | 72.1 | 84.5 | 80.0 | 79.0 |
+| **CMA 8B (Ours)** | **91.4** | **89.4** | **82.0** | **89.6** | **85.6** | **79.0** |
 
 ## Citation
 

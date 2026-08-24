@@ -818,7 +818,7 @@ body[data-theme="dark"] .launch-note-tag {
 
 .bench-compare-insights {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-top: 16px;
 }
@@ -854,8 +854,8 @@ body[data-theme="dark"] .launch-note-tag {
   .bench-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bench-results { grid-template-columns: 1fr; }
   .bench-bars-grid,
-  .bench-bars-grid.two,
-  .bench-compare-insights { grid-template-columns: 1fr; }
+  .bench-bars-grid.two { grid-template-columns: 1fr; }
+  .bench-compare-insights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 .highlight-card span {
@@ -1622,6 +1622,7 @@ footer p {
 
   .highlights { grid-template-columns: 1fr; }
   .bench-stats { grid-template-columns: 1fr; }
+  .bench-compare-insights { grid-template-columns: 1fr; }
   .metrics { grid-template-columns: 1fr; }
 
   .stack-controls { padding: 4px 10px 6px; }
