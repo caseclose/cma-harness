@@ -26,6 +26,10 @@ Ge Li<sup>1</sup>
 <a href="https://caseclose.github.io/cma-harness/#demo-gallery"><img alt="Demo" src="https://img.shields.io/badge/Demo-Gallery-8b5cf6?style=for-the-badge"></a>
 <a href="https://caseclose.github.io/cma-harness/#benchmark"><img alt="Benchmark" src="https://img.shields.io/badge/M2CA--Bench-2%2C000%20turns-0ea5e9?style=for-the-badge"></a>
 
+<br>
+
+<img src="assets/banner.png" alt="CMA-Harness overview" width="100%">
+
 </div>
 
 <table>
@@ -60,8 +64,6 @@ Ge Li<sup>1</sup>
 ## TL;DR
 
 We introduce a **memory-centric multimodal agent** that externalizes visual history into **Episodic Visual Memory (EVM)**, selectively retrieves relevant visual episodes, and plans understanding, generation, editing, and composition actions through a **Multimodal Executive Controller (MEC)**. The same cognitive structure is instantiated as **CMA-Harness**, a tool-augmented, multi-session deployment.
-
-<img src="assets/banner.png" alt="CMA-Harness overview" width="100%">
 
 ## Key Results
 

@@ -368,28 +368,30 @@ p {
 }
 
 .launch-note {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
-  width: min(680px, 100%);
-  margin: 22px auto 0;
-  padding: 14px 18px 14px 16px;
+  gap: 12px;
+  max-width: min(640px, 100%);
+  margin: 20px auto 0;
+  padding: 10px 16px 10px 12px;
   border: 1px solid rgba(7, 193, 96, 0.22);
-  border-radius: 20px;
+  border-radius: 16px;
   background:
     linear-gradient(180deg, rgba(7, 193, 96, 0.10), rgba(7, 193, 96, 0.04)),
     var(--card);
-  box-shadow: 0 14px 36px rgba(7, 193, 96, 0.08);
+  box-shadow: 0 10px 24px rgba(7, 193, 96, 0.08);
   text-align: left;
 }
 
 .launch-note-logo {
-  width: 48px;
-  height: 48px;
-  flex: 0 0 48px;
-  border-radius: 14px;
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  flex: 0 0 32px;
+  border-radius: 9px;
   object-fit: cover;
-  box-shadow: 0 0 0 1px rgba(7, 193, 96, 0.14), 0 8px 18px rgba(7, 193, 96, 0.2);
+  box-shadow: 0 0 0 1px rgba(7, 193, 96, 0.14), 0 4px 10px rgba(7, 193, 96, 0.18);
 }
 
 .launch-note-body {
@@ -1325,13 +1327,15 @@ footer p {
   .authors { font-size: 15px; margin-top: 18px; }
   .affiliations, .author-note { font-size: 12px; }
   .launch-note {
+    display: flex;
     width: 100%;
+    max-width: 100%;
     margin-top: 16px;
-    padding: 12px 14px;
-    border-radius: 16px;
-    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    gap: 10px;
   }
-  .launch-note-logo { width: 40px; height: 40px; flex-basis: 40px; border-radius: 12px; }
+  .launch-note-logo { width: 28px; height: 28px; max-width: 28px; max-height: 28px; flex-basis: 28px; border-radius: 8px; }
   .launch-note-en { font-size: 13.5px; }
   .launch-note-zh { font-size: 12.5px; }
 
