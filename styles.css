@@ -1442,7 +1442,8 @@ figcaption {
 }
 
 .dark figcaption {
-  color: var(--figcaption);
+  color: var(--section-band-text);
+  opacity: 0.82;
 }
 
 .link-card {
