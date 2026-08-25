@@ -142,9 +142,9 @@ The **Multi-turn Context Agent Benchmark (M2CA-Bench)** is a held-out evaluation
 
 <img src="assets/data-pipeline.png" alt="Unified Scenario Engine data pipeline" width="100%">
 
-- **Structured scenario representation** — each turn is annotated as `(tᵢ, τᵢ, Rᵢ*, dᵢ, fᵢ)`: user input, task type, ground-truth retrieval set, difficulty, and challenge tags. Topics span **8 domains** with four task modes per topic — `generate`, `edit`, `cross-reference-edit`, `understand`.
-- **Four difficulty strata** — stratified by topic shift, temporal span, multi-image interaction, and ambiguity (`easy` / `medium` / `hard` / `very_hard`).
-- **Hard-negative design** — *high-similarity confounders* (near-duplicate images differing only in color, lighting, or material) and *negative retrieval samples* (semantic and structural negatives) block shortcut learning.
+- **Structured scenario representation** — each turn is annotated as `(uᵢ, τᵢ, Rᵢ*, dᵢ, fᵢ)`: user input, task type, ground-truth retrieval set, difficulty, and challenge tags. Topics span **8 domains** with four task modes per topic — `generate`, `edit`, `cross-reference-edit`, `understand`.
+- **Four difficulty strata** — stratified by topic shift, temporal span, multi-image interaction, and ambiguity: `easy` (same-topic sequential generation/editing), `medium` (high-similarity variants; simple topic switch), `hard` (cross-topic retrieval; long-range callback ≥ 8 turns), `very_hard` (multi-image comparison, fusion edits, ambiguous references).
+- **Hard-negative design** — *high-similarity confounders* (near-duplicate images differing subtly) and *negative retrieval samples* (semantic negatives requiring no retrieval, structural negatives prompting new generation) block shortcut learning.
 - **Three evaluation subsets** (paper Sec. 5.2) — **Full** (all 20 turns), **Medium** (turns 11–20), **Hard** (`very_hard` turns within 11–20).
 
 Retrieval accuracy on M2CA-Bench ([paper Table 3](https://arxiv.org/abs/2607.08497)):

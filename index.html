@@ -286,7 +286,7 @@
           <h3>Structured scenario representation</h3>
           <p>
             Each turn is annotated as
-            <code>(t<sub>i</sub>, τ<sub>i</sub>, R<sub>i</sub><sup>*</sup>, d<sub>i</sub>, f<sub>i</sub>)</code>:
+            <code>(u<sub>i</sub>, τ<sub>i</sub>, R<sub>i</sub><sup>*</sup>, d<sub>i</sub>, f<sub>i</sub>)</code>:
             user input, task type, ground-truth retrieval set, difficulty, and challenge tags.
             Topics span 8 domains (commercial, industrial, educational, public service, hospitality,
             natural landscape, scientific, space) with four task modes per topic —
@@ -300,9 +300,9 @@
             and ambiguity:
           </p>
           <ul class="bench-list">
-            <li><strong>easy</strong> — same-topic, short-span references</li>
-            <li><strong>medium</strong> — mid-range recall across turns</li>
-            <li><strong>hard</strong> — long temporal spans or topic shifts</li>
+            <li><strong>easy</strong> — same-topic sequential generation or editing</li>
+            <li><strong>medium</strong> — high-similarity variants; simple topic switch</li>
+            <li><strong>hard</strong> — cross-topic retrieval; long-range callback (≥&nbsp;8 turns)</li>
             <li><strong>very_hard</strong> — multi-image comparison, fusion edits, ambiguous references</li>
           </ul>
         </div>
@@ -310,10 +310,9 @@
           <h3>Hard-negative design</h3>
           <p>
             To block shortcut learning, M2CA-Bench injects two adversarial families:
-            <em>high-similarity confounders</em> (near-duplicate images differing only in
-            color, lighting, or material), and <em>negative retrieval samples</em> — semantic
-            negatives that mention past images conversationally without needing them, and
-            structural negatives that explicitly request a new generation.
+            <em>high-similarity confounders</em> (near-duplicate images differing subtly)
+            and <em>negative retrieval samples</em> — semantic negatives that require no retrieval,
+            and structural negatives that prompt a new generation.
           </p>
         </div>
         <div class="card">
