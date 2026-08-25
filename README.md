@@ -28,13 +28,24 @@ Ge Li<sup>1</sup>
   <img alt="Live" src="https://img.shields.io/badge/Live-Gray--scale%20testing-07C160?style=for-the-badge&logo=wechat&logoColor=white">
 </p>
 
-<img src="assets/wechat-logo.svg" width="44" height="44" alt="WeChat">
+</div>
+
+<table>
+<tr>
+<td width="72" align="center" valign="middle">
+  <img src="assets/wechat-logo.svg" width="40" height="40" alt="WeChat">
+</td>
+<td valign="middle">
 
 **Adapted parts of this architecture have been rolled out to WeChat Xiaowei Agent for gray-scale testing.**
 
 <sub>该架构经调整的部分内容已上线到微信小微Agent中进行灰测。</sub>
 
-<p>
+</td>
+</tr>
+</table>
+
+<p align="center">
   <a href="#tldr">TL;DR</a>
   &ensp;·&ensp;
   <a href="#key-results">Results</a>
@@ -47,8 +58,6 @@ Ge Li<sup>1</sup>
   &ensp;·&ensp;
   <a href="#citation">Citation</a>
 </p>
-
-</div>
 
 ---
 
