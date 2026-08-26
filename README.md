@@ -69,17 +69,13 @@ We introduce a **memory-centric multimodal agent** that externalizes visual hist
 
 Numbers from paper Tables 3–4. Retrieval subsets follow Sec.&nbsp;5.2.
 
-| Metric | Result | Setting |
-| :--- | :---: | :--- |
-| English retrieval (**Full**) | **91.4%** | all 20 turns |
-| Chinese retrieval (**Full**) | **89.6%** | all 20 turns |
-| English retrieval (**Medium**) | **89.4%** | turns 11–20 |
-| Chinese retrieval (**Medium**) | **85.6%** | turns 11–20 |
-| English retrieval (**Hard**) | **82.0%** | `very_hard` turns within 11–20 |
-| Chinese retrieval (**Hard**) | **79.0%** | `very_hard` turns within 11–20 |
-| Gemini quality (English) | **8.49 / 10** | overall generation score |
-| Gemini quality (Chinese) | **8.53 / 10** | overall generation score |
-| Per-turn runtime | **12.7 s** | ~½ of the 32B all-context baseline |
+| Metric | English | Chinese | Setting |
+| :--- | :---: | :---: | :--- |
+| Retrieval (**Full**) | **91.4%** | **89.6%** | all 20 turns |
+| Retrieval (**Medium**) | **89.4%** | **85.6%** | turns 11–20 |
+| Retrieval (**Hard**) | **82.0%** | **79.0%** | `very_hard` turns within 11–20 |
+| Gemini quality | **8.49 / 10** | **8.53 / 10** | overall generation score |
+| Per-turn runtime | **12.7 s** | — | ~½ of the 32B all-context baseline |
 
 ## Demos
 
