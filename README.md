@@ -75,7 +75,6 @@ Numbers from paper Tables 3–4. Retrieval subsets follow Sec.&nbsp;5.2.
 | Retrieval (**Medium**) | **89.4%** | **85.6%** | turns 11–20 |
 | Retrieval (**Hard**) | **82.0%** | **79.0%** | `very_hard` turns within 11–20 |
 | Gemini quality | **8.49 / 10** | **8.53 / 10** | overall generation score |
-| Per-turn runtime | **12.7 s** | — | ~½ of the 32B all-context baseline |
 
 ## Demos
 
