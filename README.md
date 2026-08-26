@@ -67,14 +67,13 @@ We introduce a **memory-centric multimodal agent** that externalizes visual hist
 
 ## Key Results
 
-<div align="center">
-
-| **91.4%** | **89.6%** | **82.0%** | **12.7 s** | **8.53 / 10** |
-| :---: | :---: | :---: | :---: | :---: |
-| English Full | Chinese Full | English Hard | Per-turn runtime | Gemini quality |
-| all 20 turns | all 20 turns | very_hard ⊂ turns 11–20 | ~½ of 32B all-context | Chinese generation |
-
-</div>
+| Metric | Result | Setting |
+| :--- | :---: | :--- |
+| English retrieval (**Full**) | **91.4%** | all 20 turns |
+| Chinese retrieval (**Full**) | **89.6%** | all 20 turns |
+| English retrieval (**Hard**) | **82.0%** | `very_hard` turns within 11–20 |
+| Per-turn runtime | **12.7 s** | ~½ of the 32B all-context baseline |
+| Gemini quality (Chinese) | **8.53 / 10** | overall generation score |
 
 ## Demos
 
