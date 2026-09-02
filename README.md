@@ -115,6 +115,24 @@ Interactive multimodal sessions — search-driven generation, brand-fusion editi
 
 <sub><b>Qualitative comparison.</b> CMA (Ours) vs. an all-context baseline on cross-turn grounding, consistent editing, and long-range recall.</sub>
 
+<br><br>
+
+<img src="assets/case1.png" alt="Example Dialogue 1" width="100%">
+
+<sub><b>Example Dialogue 1.</b> A long-horizon multimodal interaction containing image generation, editing, topic switching, and visual question answering.</sub>
+
+<br><br>
+
+<img src="assets/case2.png" alt="Example Dialogue 2" width="100%">
+
+<sub><b>Example Dialogue 2.</b> Environmental transformations, long-range recall, and stable visual consistency.</sub>
+
+<br><br>
+
+<img src="assets/case3.png" alt="Example Dialogue 3" width="100%">
+
+<sub><b>Example Dialogue 3.</b> Object insertion, cross-scene composition, and detailed visual comparison across distant turns.</sub>
+
 </div>
 
 ## Method
