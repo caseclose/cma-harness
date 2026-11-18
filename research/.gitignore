@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+checkpoints/
+datasets/
+scenarios/
+results/
+outputs/
+*.safetensors
+*.pt
+*.bin

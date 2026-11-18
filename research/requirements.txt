@@ -1,0 +1,15 @@
+# Install a CUDA-compatible PyTorch build separately.
+ms-swift==3.12.0
+transformers>=4.57,<5
+diffusers>=0.36,<1
+accelerate
+peft
+qwen-vl-utils
+pillow
+numpy
+requests
+fastapi
+uvicorn
+python-multipart
+deepspeed
+tqdm

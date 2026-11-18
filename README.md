@@ -56,6 +56,8 @@ Ge Li<sup>1</sup>
   &ensp;·&ensp;
   <a href="#m2ca-bench">Benchmark</a>
   &ensp;·&ensp;
+  <a href="research/">Code</a>
+  &ensp;·&ensp;
   <a href="#citation">Citation</a>
 </p>
 
@@ -196,7 +198,9 @@ If you find this work useful, please consider citing:
 
 <div align="center">
 
-The code and M2CA-Bench dataset will be released here soon.
+The **[CMA research code](research/)** is now available: training launchers, reward functions, inference services, scenario-engine source, and evaluation scripts. See the [setup and release scope](research/README.md) for dependencies and validation limits.
+
+**M2CA-Bench, the training data, and trained model checkpoints will be made publicly available upon acceptance.**
 
 ⭐ Star or 👀 watch this repository to get notified.
 

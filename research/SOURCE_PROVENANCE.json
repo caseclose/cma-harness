@@ -1,0 +1,246 @@
+{
+  "release_date": "2026-11-18",
+  "scope": "Portable CMA research snapshot; no datasets or model weights included.",
+  "validation": {
+    "python_syntax_files": 27,
+    "shell_syntax_files": 3,
+    "cpu_unit_tests": 14,
+    "gpu_reproduction_rerun": false
+  },
+  "files": [
+    {
+      "path": "research/.env.example",
+      "sha256": "feef0f8232bcb6d00f88e6870d37c6832a52bd293d49973e6e8aa33ec78b450b",
+      "bytes": 348
+    },
+    {
+      "path": "research/.gitignore",
+      "sha256": "31f0457ea3342f832da591b2f3412d9a26aa7170623a8c90cf0e4d691e130de4",
+      "bytes": 101
+    },
+    {
+      "path": "research/README.md",
+      "sha256": "8e554602c1ca4dbbaf3a2b82635d3789103de832166bd73fdd02919f9b1948fe",
+      "bytes": 5611
+    },
+    {
+      "path": "research/THIRD_PARTY_NOTICES.md",
+      "sha256": "27af81c2a381682eb53ddf121fa77f0aaaac86374b33a6ef8523bb8c996d3b27",
+      "bytes": 487
+    },
+    {
+      "path": "research/benchmark/build_retrieval_trainset_from_benchmark.py",
+      "source": "ms-swift-en/benchmark/build_retrieval_trainset_from_benchmark.py",
+      "source_sha256": "ad05b88b44c0432ba023c9e3be359d7c5403adad5cb2bad49e48b5de3fc23db6",
+      "sha256": "d9946a20e0bbae1ded56fba6b5a20fe4c3e1430584e37c27d2c6bce0b4248774",
+      "bytes": 16508
+    },
+    {
+      "path": "research/benchmark/build_vlm_a_rl_a2_dataset_from_retrieval_rl.py",
+      "source": "ms-swift-en/benchmark/build_vlm_a_rl_a2_dataset_from_retrieval_rl.py",
+      "source_sha256": "a5cebf1a6057381cf43a6a3851df191583988ac3a659128820de0da783e61259",
+      "sha256": "17a593368de7675b5b660195b9540dfdf0a95e5f451a9d4cf26cf65f2b82644f",
+      "bytes": 6680
+    },
+    {
+      "path": "research/benchmark/calculate_retrieval_accuracy_baseline_thumbs.py",
+      "source": "ms-swift-en/benchmark/calculate_retrieval_accuracy_baseline_thumbs.py",
+      "source_sha256": "e29342e434ad3d3d06742b2a7b8d739bc9b272d21185edd6ce0deee9f16e1746",
+      "sha256": "eee2dcf048d3a4bd5ae1b4f9b1ec9685ddb405e9be9d01a8b3a50c23cf3b3286",
+      "bytes": 5283
+    },
+    {
+      "path": "research/benchmark/calculate_retrieval_accuracy_tags_desc.py",
+      "source": "ms-swift-en/benchmark/calculate_retrieval_accuracy_tags_desc.py",
+      "source_sha256": "1f96aae646b915d726e785eb1e124a98f275f13e32fd868e896e11f14166e7c2",
+      "sha256": "e1d4c5f4a7d786b0aa7827450d18ed3a9288f1186b6e6b1aeac6e61851036c4e",
+      "bytes": 5145
+    },
+    {
+      "path": "research/benchmark/cma_api_client.py",
+      "sha256": "c13978fed2edf31d60ee1a79ae0882b0d2736db54d132b613e4766ad4482dc55",
+      "bytes": 2835
+    },
+    {
+      "path": "research/benchmark/eval_utils.py",
+      "source": "ms-swift-en/benchmark/eval_utils.py",
+      "source_sha256": "4889f7e138e07521e61383bffbf8bc10e35d32f461d0404ff8c79848068d0cd4",
+      "sha256": "c0d42c175af4ad2c94733c2f7e461abfe5d5fd2a39a316b440154ea0870d924a",
+      "bytes": 5359
+    },
+    {
+      "path": "research/benchmark/evaluate_gemini_generation_quality_main.py",
+      "source": "ms-swift-en/benchmark/evaluate_gemini_generation_quality_main.py",
+      "source_sha256": "8b681cffbc9d3738e5cb1dde8802e13a38df88a1006500e23efc5d7f8f5587c9",
+      "sha256": "43fd8014c6d88a773f411e4cba3a0dfa06f49b558163781bf8551a0e49261f7f",
+      "bytes": 15560
+    },
+    {
+      "path": "research/benchmark/run_agent_conversation.py",
+      "source": "ms-swift-en/benchmark/run_agent_conversation.py",
+      "source_sha256": "a0ebac38884aaa1128781d9d3432c98eb959c1b57ea01a646ee7cd71fd540025",
+      "sha256": "0b6e2155b57c24db2894f3dc76cc3a6e95b24a4c9c749cf4bb5afe98f2c8fe8b",
+      "bytes": 13680
+    },
+    {
+      "path": "research/benchmark/run_agent_conversation_title_tags_desc_thumbs.py",
+      "source": "ms-swift-en/benchmark/run_agent_conversation_title_tags_desc_thumbs.py",
+      "source_sha256": "4138bff9f3fd5aa448bf7bd7356eb93f2030e0fcfeb9cd3f0a3cd37709ab174a",
+      "sha256": "516030d22ae20529639582f5eb2c48712a81c299e4a19ce2b7fcc8fb6aa0423c",
+      "bytes": 4504
+    },
+    {
+      "path": "research/benchmark/run_kv_cache_baseline.py",
+      "source": "ms-swift-en/benchmark/run_kv_cache_baseline.py",
+      "source_sha256": "21950e14edc23a2a37155fb5c43d4a443c5d7246401ec7a89463ca68bfa43545",
+      "sha256": "915718db3724d29eb4fbfcef3802f381d7c3063d33993836d0f61d5385937f84",
+      "bytes": 41170
+    },
+    {
+      "path": "research/benchmark/run_kv_cache_baseline_20.py",
+      "source": "ms-swift-en/benchmark/run_kv_cache_baseline_20.py",
+      "source_sha256": "64c4a4ea450340101c8899c9f5202d33bb30d12cfc2eb4f094c1621c024fe656",
+      "sha256": "8e7b2485b8f8b3d991b6ab01569aad985fa85a49d969d6e1b0093f86f2646cf5",
+      "bytes": 550
+    },
+    {
+      "path": "research/benchmark/run_kv_cache_baseline_20_thumbs_448_tags_desc.py",
+      "source": "ms-swift-en/benchmark/run_kv_cache_baseline_20_thumbs_448_tags_desc.py",
+      "source_sha256": "d42226f6d269987f61d4501f0fbb9b994298168a2e1bd121efdb08926e87e1ad",
+      "sha256": "6020e9203f93afd1c1e19fe973a699392fb3e6f7689fa25b30421106dbd7089f",
+      "bytes": 23476
+    },
+    {
+      "path": "research/benchmark/run_kv_cache_trained_0204_thumbs_448_hard.py",
+      "source": "ms-swift-en/benchmark/run_kv_cache_trained_0204_thumbs_448_hard.py",
+      "source_sha256": "07216ed3035fbe9de02af6f4528b63d00e004591676730c835964a34e13bd0eb",
+      "sha256": "0323bc47cd6b36882d154e693872b4325f04491b13410e6f7042a8aa849a07b1",
+      "bytes": 19380
+    },
+    {
+      "path": "research/benchmark/split_retrieval_sessions.py",
+      "source": "ms-swift-en/benchmark/split_retrieval_sessions.py",
+      "source_sha256": "b834a7bff20c8fcf686ff401b7a2996d78736976bc40265f9202b0f92732631e",
+      "sha256": "6eb2dc6eac2f58d3ed84c3547427fc3aacc5ac38975fc333c90e85e00dd44706",
+      "bytes": 5016
+    },
+    {
+      "path": "research/gemini_multi_agent/api_clients.py",
+      "sha256": "b8a4682fe92a1ad4f16d969559867a10cbf81197497989f6e71dd3516e68413d",
+      "bytes": 1515
+    },
+    {
+      "path": "research/gemini_multi_agent/generate_training_data.py",
+      "source": "gemini_multi_agent/generate_training_data.py",
+      "source_sha256": "7b7a19ed303b41a75bb2ebc522df9929d63c07000a7d38baf6e411cc798807ba",
+      "sha256": "d1bb752ecdcb6c245b12c735d78fb1aa26759aea3a3ac50a54cb80d026b38a85",
+      "bytes": 46922
+    },
+    {
+      "path": "research/gemini_multi_agent/generate_v2_standard.py",
+      "source": "gemini_multi_agent/generate_v2_standard.py",
+      "source_sha256": "cfc44d7b03fb3cf556e1502440784190a541dd67b3c17b006936eea498cb5d90",
+      "sha256": "3cac128e1e0782682bc97d4dd227b756bb58b895903ec5f63a0c3dd98d7e4f2d",
+      "bytes": 19220
+    },
+    {
+      "path": "research/gemini_multi_agent/generate_v2_with_negatives.py",
+      "source": "gemini_multi_agent/generate_v2_with_negatives.py",
+      "source_sha256": "5bfca9196bf7193a1db074e6b05473dceaa7f2a4243f344d4bb25962877e7821",
+      "sha256": "96b4cb648621200645ed146fdacd061247b6b7a87e8aa5b2598ef6bd96c67544",
+      "bytes": 14245
+    },
+    {
+      "path": "research/gemini_multi_agent/reformat_for_swift.py",
+      "source": "gemini_multi_agent/reformat_for_swift.py",
+      "source_sha256": "40ad0ba889d6fcfd4bc032e8a402651a46f605978eac36644731fd40c267034c",
+      "sha256": "6b9e8721486f8ce3007fd85fbcc51cedcb76396a76bb7fb5a66f1d6ed65bd09e",
+      "bytes": 5780
+    },
+    {
+      "path": "research/ms-swift/agent_api_server.py",
+      "source": "ms-swift-en/agent_api_server.py",
+      "source_sha256": "245f6526c12d8ec3f2f453ccf4fa0c359429fc2e97126a7347ff7d513b109b32",
+      "sha256": "2dffcf1a4e760fee38c1476f67e5f39e44e9b2370bfc1d7a01d13bd36a7f9794",
+      "bytes": 10470
+    },
+    {
+      "path": "research/ms-swift/cma_api_client.py",
+      "sha256": "c13978fed2edf31d60ee1a79ae0882b0d2736db54d132b613e4766ad4482dc55",
+      "bytes": 2835
+    },
+    {
+      "path": "research/ms-swift/examples/train/grpo/plugin/retrieval_reward_300.py",
+      "source": "ms-swift/examples/train/grpo/plugin/retrieval_reward_300.py",
+      "source_sha256": "81fd6da5ba714f2a1a345d84af658925a734d7ceb8d8fa22846e7b34e33b269f",
+      "sha256": "b4540cd3bce6618f0672bf4e0c63278f44bcc9ab681aa51432a1177e9fddd83b",
+      "bytes": 2268
+    },
+    {
+      "path": "research/ms-swift/examples/train/grpo/plugin/vlm_a_downstream_retrieval_reward.py",
+      "source": "ms-swift/examples/train/grpo/plugin/vlm_a_downstream_retrieval_reward.py",
+      "source_sha256": "4226bf11dd2579085f846b265c80d389262aff1e9c321901691cdad7b9d3ab71",
+      "sha256": "120b1a43f779a8fdf2ef8f531424e0e727104735910d30cb28f2999e0a268dce",
+      "bytes": 12795
+    },
+    {
+      "path": "research/ms-swift/multimodal_agent_service.py",
+      "source": "ms-swift-en/multimodal_agent_service.py",
+      "source_sha256": "6de7fc5bcb9c531b384cf558941a8a7c77492c194a47cc5f8159a7ec5d6af385",
+      "sha256": "f19b3aca1a1d406981e84c978699aedd645f8122d17e12d5c5de3d70b09e2a11",
+      "bytes": 55186
+    },
+    {
+      "path": "research/ms-swift/qwen_lightning_generator.py",
+      "source": "ms-swift-en/qwen_lightning_generator.py",
+      "source_sha256": "6dfc4c13ac3e5c8be969e79a1c42125be63fcf2fa23531be4ab61150659fcaa6",
+      "sha256": "1cf31541d7530f1c88e055dfcc7d42dd2d42f310f74f8098f02edccb345728a5",
+      "bytes": 7546
+    },
+    {
+      "path": "research/ms-swift/train_retrieval_rl_dapo_300.sh",
+      "source": "ms-swift/train_retrieval_rl_dapo_300.sh",
+      "source_sha256": "78ee45cbb3b55639c0ddaa96f4573dff9c74423cf1987edf8a66b38e23c199e0",
+      "sha256": "12e1924bf4a500315b38332559ee35c56fcd0735690940e272e92c840f278283",
+      "bytes": 3358
+    },
+    {
+      "path": "research/ms-swift/train_retrieval_sft_300.sh",
+      "source": "ms-swift/train_retrieval_sft_300.sh",
+      "source_sha256": "06be06a508681ae0d44dc6b2db0e613edaefd31e47464fa61a4bd135dff69402",
+      "sha256": "7ecb76832476b05b31ebce2c78f7189a946f080bc7a8795edc9a3226a75dc782",
+      "bytes": 3737
+    },
+    {
+      "path": "research/ms-swift/train_vlm_a_rl_dapo_300_a2.sh",
+      "source": "ms-swift/train_vlm_a_rl_dapo_300_a2.sh",
+      "source_sha256": "f459dae0a5e7af0f2bc9148cbb540af03b707731f43e6f4644b2268277648cc9",
+      "sha256": "9fbf7d6c017b992695703110f95ec1ecf256cb193a84e52a9949e9f823c6feb8",
+      "bytes": 6657
+    },
+    {
+      "path": "research/ms-swift/vlmb_retrieval_service.py",
+      "source": "ms-swift/vlmb_retrieval_service.py",
+      "source_sha256": "33586f27fd2dd271b62ffe20b9b00f008b7fcf6f6bc16a2b3f4dd4a781f36d3e",
+      "sha256": "a50c9097b8f0177a75ac66f2f352f54316bad0045ad31d69013b9272a1ab8a30",
+      "bytes": 7710
+    },
+    {
+      "path": "research/requirements.txt",
+      "sha256": "76ec7ea949da9d3589984bb23f856026519661dde40524f980c74fd05628cb34",
+      "bytes": 212
+    },
+    {
+      "path": "research/tests/test_release.py",
+      "sha256": "49b288658a936e8db78eca77f7845c8b50c2c9eb258fcc364fd9499b59b3c4f0",
+      "bytes": 8062
+    },
+    {
+      "path": "research/third_party/ms-swift-LICENSE",
+      "source": "ms-swift/LICENSE",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    }
+  ]
+}
